@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: #fff;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -60,7 +71,10 @@ button.btn.btn-outline-danger:hover {
 
 .card {
     border: none;
+    background-color: transparent;
 }
+
+
 
 .card-body {
     border: none;
@@ -79,6 +93,8 @@ button.btn.btn-outline-danger:hover {
 .card-text {
     font-family: 'Roboto', serif;
     font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
 }
 
 .card-date {
@@ -95,4 +111,115 @@ button.btn.btn-outline-danger:hover {
     display: flex;
     justify-content: space-evenly;
 }
+
+.card-link {
+    text-decoration: none;
+    color: #9F9F9F;
+}
+
+
+.btn-lg {
+    font-size: 1.1rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+}
+
+.card.border-0 {
+    cursor: pointer;
+  }
+
+
+.card.border-0:hover .card-link {
+    color: #5C1919;
+    text-decoration: underline;
+}
+
+.button-emplacement {
+    display: flex;
+    margin-right: 2rem;
+}
+
+footer {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2F2F2;
+    padding: 3rem;}
+
+.footer-text {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-text:hover {
+    color: rgb(43, 37, 37);
+    text-decoration: underline;
+}
+
+.footer-titre {
+    font-weight: bold;
+}
+
+footer.dark-mode {
+    background-color: #212121;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+  
+.search-bar {
+    width: 40px;
+    height: 2.625rem;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    transition: width 0.3s ease-in-out;
+    background-color: #401313;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    border-radius: 25px 25px 25px 25px;
+
+  }
+  
+  .search-bar.active {
+    width: 200px;
+  }
+  
+  .btn-search {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .btn-search:hover {
+    color: #ddd;
+  }
+  
+input[type=text] {
+    padding-left: 1rem;
+}
+
+.dark-mode-container {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    transition: margin-right 0.3s ease-in-out;
+}
+
+.dark-mode-container.active {
+    margin-right: 11rem;
+}
+
 
