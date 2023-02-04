@@ -7,7 +7,6 @@
     exit();
 } */
 
-echo $_GET['numStat'];
 include '../../../header.php';
 
 $numStat = $_GET['numStat'];

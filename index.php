@@ -43,3 +43,4 @@ sql_connect();
     <button type="button" class="btn btn-outline-light">Voir plus d'articles</button>
 
 <?php require_once 'footer.php'; ?>
+
