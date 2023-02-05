@@ -1,5 +1,12 @@
 <?php require_once 'header.php'; 
 sql_connect();
+$articles = sql_select("ARTICLE", "*", NULL, 'numArt DESC');
+$dateSQL = $articles[0]['dtCreArt'];
+list($date, $heure) = explode(" ", $dateSQL);
+list($annee, $mois, $jour) = explode("-", $date);
+$touslesmois = array("janvier", "février", "mars", "avril", "mai", "juin",
+    "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+$datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
 
 // print_r(curl("https://reqres.in/api/users", "POST", '{"name": "morpheus", "job": "leader"}'));
 ?>
@@ -7,10 +14,14 @@ sql_connect();
         <div class="article1">
             <div class="card border-0" style="width: 29rem;">
                 <div class="card-body">
-                    <p class="card-date">30 février 2025</p>
-                    <h5 class="card-title">La fin de Bordeaux S.O GOOD</h5>
-                    <img src="source/images/festival.jpg" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 486.61px; height: 425.89px; object-fit: cover; object-position: 50% 0;">
-                    <p class="card-text">Depuis 2014, Bordeaux S.O Good est un Festival célébrant la Gastronomie et l'Art de Vivre du Sud Ouest. Durant ce festival, le Sud Ouest et sa gastronomie sont sur le devant de la scène, il a été pensé comme...</p>
+                    <p class="card-date"><?php 
+                    list($date, $heure) = explode(" ", $articles[0]['dtCreArt']);
+                    list($annee, $mois, $jour) = explode("-", $date);
+                    echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
+                    ?></p>
+                    <h5 class="card-title"><?php echo $articles[0]['libTitrArt'];?></h5>
+                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt'];?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 486.61px; height: 425.89px; object-fit: cover; object-position: 50% 0;">
+                    <p class="card-text"><?php echo $articles[0]['libAccrochArt'];?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
             </div>
@@ -19,10 +30,14 @@ sql_connect();
             <div class="article2">
                 <div class="card border-0" style="width: 28rem;">
                     <div class="card-body">
-                        <p class="card-date">30 février 2025</p>
-                        <h5 class="card-title">L'histoire de cannelés bordelais</h5>
-                        <img src="source/images/cannele.webp" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
-                        <p class="card-text">Ces saveurs bien connus de Bordeaux, renferment des secrets bien cachés, dans cet article je montrerai...</p>
+                        <p class="card-date"><?php
+                        list($date, $heure) = explode(" ", $articles[1]['dtCreArt']);
+                        list($annee, $mois, $jour) = explode("-", $date);
+                        echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
+                        ?></p>
+                        <h5 class="card-title"><?php echo $articles[1]['libTitrArt'];?></h5>
+                        <img src="source/images/articles/<?php echo $articles[1]['urlPhotArt'];?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                        <p class="card-text"><?php echo $articles[1]['libAccrochArt'];?></p>
                         <a href="#" class="card-link">lire la suite</a>
                     </div>
                 </div>
@@ -30,10 +45,14 @@ sql_connect();
             <div class="article3">
                 <div class="card border-0" style="width: 28rem;">
                     <div class="card-body">
-                        <p class="card-date">30 février 2025</p>
-                        <h5 class="card-title">Les capucins : l’enfer</h5>
-                        <img src="source/images/capucins.jpg" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
-                        <p class="card-text">Les capucins. Ce simple mot qui fait trembler les plus grands. Etchebest ou bien même Elon Musk...</p>
+                        <p class="card-date"><?php
+                        list($date, $heure) = explode(" ", $articles[2]['dtCreArt']);
+                        list($annee, $mois, $jour) = explode("-", $date);
+                        echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;                        
+                        ?></p>
+                        <h5 class="card-title"><?php echo $articles[2]['libTitrArt'];?></h5>
+                        <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt'];?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                        <p class="card-text"><?php echo $articles[2]['libAccrochArt'];?></p>
                         <a href="#" class="card-link">lire la suite</a>
                     </div>
                 </div>
@@ -43,4 +62,19 @@ sql_connect();
     <button type="button" class="btn btn-outline-light">Voir plus d'articles</button>
 
 <?php require_once 'footer.php'; ?>
+
+<script>
+const cards = document.querySelectorAll('.card.border-0');
+cards[0].addEventListener('click', function(e) {
+    window.location.href = 'article.php?numArt=<?php echo $articles[0]['numArt']; ?>';
+});
+
+cards[1].addEventListener('click', function(e) {
+    window.location.href = 'article.php?numArt=<?php echo $articles[1]['numArt']; ?>';
+});
+
+cards[2].addEventListener('click', function(e) {
+    window.location.href = 'article.php?numArt=<?php echo $articles[2]['numArt']; ?>';
+});
+</script>
 

@@ -23,22 +23,23 @@ include '../../../header.php';
         </div>
         <div class="col-md-12">
             <!--Form to create a new status-->
-            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
-                <div class="form-group">
+            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" enctype='multipart/form-data'>
+            <div class="form-group">
+                <input id="numArt" class="form-control" type="text" style="display: none;" name="numArt" value="<?php echo($numArt) ?>" readonly="readonly" >
                     <label for="libTitrArt">Saisir le titre de l'article<span>*</span></label>
-                    <input id="libTitrArt"  class="form-control" maxlength="50" required placeholder="Ajouter du texte (50 caractères max)" type="text" name="libTitrArt">
+                    <input id="libTitrArt"  class="form-control" maxlength="70" required placeholder="Ajouter du texte (70 caractères max)" type="text" name="libTitrArt">
                 </div>
                 <div class="form-group">
                     <label for="libChapoArt">Saisir le chapeau de l'article<span>*</span></label>
-                    <input id="libChapoArt" class="form-control" maxlength="10000" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="libChapoArt">
+                    <textarea id="libChapoArt" class="form-control" rows="2"  maxlength="250" cols="10" required placeholder="Ajouter du texte (250 caractères max)" type="text" name="libChapoArt"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="libAccrochArt">Accroche<span>*</span></label>
-                    <input id="libAccrochArt" class="form-control" maxlength="150" required placeholder="Ajouter du texte (150 caractères max)" type="text" name="libAccrochArt">
+                    <textarea id="libAccrochArt" class="form-control" rows="2"  maxlength="150" cols="10" required placeholder="Ajouter du texte (150 caractères max)" type="text" name="libAccrochArt"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="parag1Art">Paragraphe 1<span>*</span></label>
-                    <input id="parag1Art" class="form-control" maxlength="10000" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="parag1Art">
+                    <textarea id="parag1Art" class="form-control" rows="12"  maxlength="10000" cols="10" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="parag1Art"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="libSsTitr1Art">Sous-titre 2<span>*</span></label>
@@ -46,7 +47,7 @@ include '../../../header.php';
                 </div>
                 <div class="form-group">
                     <label for="parag2Art">Paragraphe 2<span>*</span></label>
-                    <input id="parag2Art" class="form-control" maxlength="10000" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="parag2Art">
+                    <textarea id="parag2Art" class="form-control" rows="12"  maxlength="10000" cols="10" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="parag2Art"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="libSsTitr2Art">Sous-titre 3<span>*</span></label>
@@ -54,11 +55,11 @@ include '../../../header.php';
                 </div>
                 <div class="form-group">
                     <label for="parag3Art">Paragraphe 3<span>*</span></label>
-                    <input id="parag3Art" class="form-control" maxlength="10000" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="parag3Art">
+                    <textarea id="parag3Art" class="form-control" rows="12"  maxlength="10000" cols="10" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="parag3Art"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="libConclArt">Conclusion<span>*</span></label>
-                    <input id="libConclArt" class="form-control" maxlength="10000" required placeholder="Ajouter du texte (10 000 caractères max)" type="text" name="libConclArt">
+                    <textarea id="libConclArt" class="form-control" rows="6"  maxlength="5000" cols="10" required placeholder="Ajouter du texte (5 000 caractères max)" type="text" name="libConclArt"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="article_choice">Choisir le type d'article</label>
@@ -70,7 +71,7 @@ include '../../../header.php';
                 </div>
                 <div class="form-group">
                     <label for="urlPhotArt">Insérer votre photo :</label>
-                    <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
+                    <input id="urlPhotArt" type="file" name="urlPhotArt" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
                 </div>
                 <div class="form-group mt-2">
                     <button type="submit" class="btn btn-primary color-5C1919">Publier l'article</button>

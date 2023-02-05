@@ -5,13 +5,6 @@ const ampouleBtn = document.querySelector('.dark-mode-container');
 const footer = document.querySelector('footer');
 const ampouleImg = document.querySelector('#ampoule');
 
-cards[0].addEventListener('click', function(e) {
-  window.open('https://www.youtube.com/', '_blank');
-});
-
-cards[1].addEventListener('click', function(e) {
-  window.open('https://www.google.com/', '_blank');
-});
 
 
 searchBtn.addEventListener('click', function() {

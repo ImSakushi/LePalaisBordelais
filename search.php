@@ -1,0 +1,1 @@
+SELECT * FROM `ARTICLE` WHERE libTitrArt LIKE '%CHU%' OR libChapoArt LIKE '%culinaire%' OR libAccrochArt LIKE '%culinaire%' OR parag1Art LIKE '%culinaire%' OR libSsTitr1Art LIKE '%culinaire%' OR parag2Art LIKE '%culinaire%' OR libSsTitr2Art LIKE '%culinaire%' OR parag3Art LIKE '%culinaire%' OR libConclArt LIKE '%culinaire%'

@@ -16,7 +16,7 @@ $articles = sql_select("ARTICLE", "*");
     <div class="row">
         <div class="col-md-12">
             <h1>Articles</h1>
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Titre</th>
@@ -30,8 +30,9 @@ $articles = sql_select("ARTICLE", "*");
                             <td><?php echo $article['libTitrArt']; ?></td>
                             <td><?php echo $article['numArt']; ?></td>
                             <td>
-                                <a href="edit.php?libTitrArt=<?php echo $article['libTitrArt']; ?>" class="btn btn-primary">Edit</a>
-                                <a href="delete.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="../../../article.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-success">Voir</a>
+                                <a href="edit.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-warning">Modifier</a>
+                                <a href="delete.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-danger">Supprimer</a>
                             </td>
                         </tr>
                     <?php } ?>

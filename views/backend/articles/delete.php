@@ -23,12 +23,12 @@ $libTitrArt = sql_select("ARTICLE", "libTitrArt", "numArt = $numArt")[0]['libTit
             <!--Form to create a new articles-->
             <form action="<?php echo ROOT_URL . '/api/articles/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="libTitrArt">libTitrArt</label>
+                    <label for="libTitrArt">Nom de l'article :</label>
                     <input id="numArt" class="form-control" type="text" style="display: none;" name="numArt" value="<?php echo($numArt) ?>" readonly="readonly" >
                     <input id="libTitrArt" class="form-control" type="text" name="libTitrArt" value="<?php echo($libTitrArt) ?>" readonly="readonly">
                 </div>
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Supprimer l'article</button>
                 </div>
             </form>
         </div>
