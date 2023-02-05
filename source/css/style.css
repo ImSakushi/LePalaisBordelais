@@ -222,4 +222,6 @@ input[type=text] {
     margin-right: 14rem;
 }
 
-
+span {
+    color: red;
+}
