@@ -25,8 +25,8 @@ require_once 'config.php';
           <img src="/source/images/logo.svg" alt="logo du palais bordelais" class="logo">
           <div class="textleftheader">
             <a href="/index.php" class="headertitre">LE PALAIS BORDELAIS</a>
-            <a href="/views/backend/dashboard.php" class="headertext">Archives</a>
-            <a href="#" class="headertext">Recommandations</a>
+            <a href="/archives.php" class="headertext">Archives</a>
+            <a href="/views/backend/dashboard.php" class="headertext">Recommandations</a>
             <a href="#" class="headertext">Recettes</a>
             <a href="#" class="headertext">Histoires</a>
           </div>

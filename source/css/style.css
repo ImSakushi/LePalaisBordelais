@@ -70,6 +70,11 @@ button.btn.btn-outline-danger:hover {
     background-color: white;
 }
 
+button.btn.btn-light.voirarticle {
+    border-color: black;
+    color: red;
+}
+
 .card {
     border: none;
     background-color: transparent;

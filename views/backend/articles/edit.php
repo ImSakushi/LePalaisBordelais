@@ -19,6 +19,8 @@ $parag2Art = sql_select("ARTICLE", "parag2Art", "numArt = $numArt")[0]['parag2Ar
 $libSsTitr2Art = sql_select("ARTICLE", "libSsTitr2Art", "numArt = $numArt")[0]['libSsTitr2Art'];
 $parag3Art = sql_select("ARTICLE", "parag3Art", "numArt = $numArt")[0]['parag3Art'];
 $libConclArt = sql_select("ARTICLE", "libConclArt", "numArt = $numArt")[0]['libConclArt'];
+$dtCreArt = sql_select("ARTICLE", "dtCreArt", "numArt = $numArt")[0]['dtCreArt'];
+list($date, $heure) = explode(" ", $dtCreArt);
 $urlPhotArt = sql_select("ARTICLE", "urlPhotArt", "numArt = $numArt")[0]['urlPhotArt'];
 $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
 
@@ -80,6 +82,10 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
                 <div class="form-group">
                     <label for="urlPhotArt">Insérer votre photo :</label>
                     <input id="urlPhotArt" type="file" name="urlPhotArt" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
+                </div>
+                <div class="form-group">
+                    <label for="dtCreArt">Date de création :</label>
+                    <input type="date" name="dtCreArt" id="dtCreArt" value="<?php echo $date?>" placeholder="Date de création">
                 </div>
                 <div class="form-group mt-2">
                     <button type="submit" class="btn btn-primary">Appliquer les modifications</button>

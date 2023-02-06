@@ -25,6 +25,10 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
             </div>
+            <div class="container-fluid">
+                <p><br></p>
+                <button type="button" class="btn btn-outline-dark" style="width:100%">Voir plus d'articles</button>
+            </div>
         </div>
         <div class="article-dispo2">
             <div class="article2">
@@ -59,7 +63,6 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-outline-light">Voir plus d'articles</button>
 
 <?php require_once 'footer.php'; ?>
 

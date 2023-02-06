@@ -31,10 +31,11 @@ $theme = $articledata[0]['numThem'];
 </head>
 <body>
     <div class="container">
-        <div class="text-center"><h1><?php echo $titre ?></h1></div>
+        <p><br></p>
+        <div class="text-center"><h1 class="fw-bolder" ><?php echo $titre ?></h1></div>
         <p><br></p>
         <div class="text-center"><h2><?php echo $chapo ?></h2></div>
-        <div class="text-center"><img src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
+        <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
         <p><br></p>
         <div class="text-left"><h3><?php echo $accroche ?></h3></div>
         <div class="text-left fs-5 paragraphe-text"><p><?php echo $paragraphe1 ?></p></div>

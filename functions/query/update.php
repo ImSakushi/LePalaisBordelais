@@ -10,7 +10,7 @@ function sql_update($from, $set, $where) {
 
     //prepare query for PDO
     $query = "UPDATE $from SET $set WHERE $where";
-
+    //echo $query . "<br>"; //debug
     //execute query
     $DB->query($query);
     $error = $DB->errorInfo();
