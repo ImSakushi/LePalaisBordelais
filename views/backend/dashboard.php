@@ -34,11 +34,11 @@ include '../../header.php';
                             </td>
                         </tr>
                         <tr>
-                            <td>Members</td>
+                            <td>Membres</td>
                             <td>
-                                <a href="/views/backend/members/list.php" class="btn btn-primary disabled">Liste</a>
-                                <a href="/views/backend/members/create.php" class="btn btn-success disabled">Créer</a>
-                                <a href="/views/backend/members/list.php" class="btn btn-warning disabled">Modifier</a>
+                                <a href="/views/backend/members/list.php" class="btn btn-primary">Liste</a>
+                                <a href="/views/backend/members/create.php" class="btn btn-success">Créer</a>
+                                <a href="/views/backend/members/list.php" class="btn btn-warning">Modifier</a>
                             </td>
                             <td>Attention, il faut aussi gérer la partie inscription/connection et la sécurité</td>
                         </tr>

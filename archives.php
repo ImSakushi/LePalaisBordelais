@@ -62,4 +62,3 @@ $articles = sql_select("ARTICLE", "*", NULL, 'numArt DESC');
 
 
 
-

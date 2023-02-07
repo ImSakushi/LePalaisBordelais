@@ -21,7 +21,7 @@ function sql_select($from, $attributs = '*', $where = null, $order = null, $limi
     }
 
     $result = $DB->query($query);
-    //echo $query;
+    //echo $query . "<br>" . "<br>";
     $error = $DB->errorInfo();
     if($error[0] != 0) {
         echo "Error: " . $error[2];

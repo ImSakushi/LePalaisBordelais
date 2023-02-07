@@ -8,7 +8,22 @@ function sql_insert($from, $keys, $values) {
         sql_connect();
     }
 
-    //prepare query for PDO
+    //array from values
+    if(!is_array($values)) {
+        $values = array($values);
+        //check if is string with quotes and remove them for each value
+        foreach($values as $key => $val) {
+            if(substr($val, 0, 1) == "'" && substr($val, -1) == "'") {
+                $values[$key] = substr($val, 1, -1);
+            }
+        }
+    }
+    //escape values
+    $values = sql_escape($values);
+    //string from values
+    $values = "'" . implode("', '", $values) . "'";
+
+    //build query
     $query = "INSERT INTO $from ($keys) VALUES ($values)";
 
     //execute query
