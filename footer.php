@@ -1,10 +1,28 @@
-<footer>
-        <a href="/views/backend/dashboard.php" class="footer-text">Admin</a>
-        <a href="#" class="footer-text">Feature</a>
-        <h3 class="footer-titre">LE PALAIS BORDELAIS</h2>
-        <a href="#" class="footer-text">Blog</a>
-        <a href="#" class="footer-text">Support</a>
-    </footer>
+<body>
+    <div class="footer">
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <a href="Contact.html">Contact</a>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="Connexion.html">Connexion</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3 class="element element3">Le Palais Bordelais</h3>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="mentionslegales.html">Mentions Légales</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p>© 2023</p>
+        </div>
+        <hr>
+    </div>
 </body>
-</html>
-
