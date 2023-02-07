@@ -1,49 +1,43 @@
 <?php
 include '../../header.php';
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    if (empty($username) || empty($password)) {
-        $error = "Les identifiants sont invalides.";
-    } else {
-        $testusername = sql_select("MEMBRE", "pseudoMemb", "pseudoMemb = '$username'");
-        if ($testusername[0][0] == $username) {
-            $testpassword = sql_select("MEMBRE", "passMemb", "passMemb = '$password'");
-            if ($testpassword[0][0] == $password) {
-                session_start();
-                $_SESSION["username"] = $username;
-                header("location: ../../index.php");
-            } else {
-                $error = "Les identifiants sont invalides.";
-            }
-            
-        } else {
-            $error = "Les identifiants sont invalides.";
-        }
-    }
-}
 ?>
+
 <div class="login-page">
     <div class="login-container">
-        <h1>Connexion</h1>
-
+        <h1>Inscription</h1>
         <div class="row g-0">
             <div class="col-md-12">
-                <p>Vous n'avez pas de compte ?<a href="register.php"> S'incrire</a></p> 
+                <p>Vous avez déjà un compte ?<a href="login.php"> Se connecter</a></p> 
             </div>
             
         </div>
 
         <?php if (isset($error)) { echo '<p class="error">' . $error . '</p>'; } ?>
+
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <input class="username" type="text" name="username" placeholder="Nom d'utilisateur">
+
+        <input class="pseudo" type="password" name="password" placeholder="Pseudo">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <input class="username" type="text" name="username" placeholder="Nom">
+                </div>
+
+                <div class="col-md-6">
+                    <input class="password" type="password" name="password" placeholder="Prénom">
+                </div>
+            <input class="username" type="text" name="username" placeholder="Adresse e-mail">
             <input class="password" type="password" name="password" placeholder="Mot de passe">
-            <button name="submit" type="submit">Se connecter</button>
+            <button class='bouton' name="submit" type="submit">Créer un compte</button>
         </form>
+
+    </div>
     </div>
 </div>
-</div>
+
+
+
 <style>
 .login-page {
     background-color: #f2f2f2;
@@ -106,6 +100,17 @@ a {
 
 }
 
+.pseudo {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
-
+.bouton {
+    width:45%;
+    margin-left: 100px;
+    
+}
 </style>
