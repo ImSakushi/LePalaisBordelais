@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
 
         <div class="row g-0">
             <div class="col-md-12">
-                <p>Vous n'avez pas de compte ?<a href="register.php"> S'incrire</a></p> 
+                <p>Vous n'avez pas de compte ?<a href="register.php"> S'inscrire</a></p> 
             </div>
             
         </div>
