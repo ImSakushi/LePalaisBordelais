@@ -84,6 +84,7 @@ button.btn.btn-light.voirarticle {
 
 .card-body {
     border: none;
+    
 }
 
 .img-article {
@@ -271,3 +272,4 @@ p.dark-mode {
 .tr:nth-of-type {
     background-color: #fff;
 }
+
