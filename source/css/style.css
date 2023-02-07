@@ -8,8 +8,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: #181A1B;
-    color: #d1cdc7;
+    background-color: black;
+    color: #fff;
 }
 
 header {
@@ -170,7 +170,7 @@ footer {
 }
 
 footer.dark-mode {
-    background-color: #1F2223;
+    background-color: #212121;
 }
 
 .search-container {
@@ -252,20 +252,20 @@ p {
 }
 
 p.dark-mode {
-    color: #d1cdc7;
+    color: #fff;
 }
 
 .dark-mode {
-    background-color: #181A1B;
-    color: #d1cdc7;
+    background-color: black;
+    color: #fff;
 }
 
 .dark-mode p {
-    color: #d1cdc7;
+    color: #fff;
 }
 
 .dark-mode td {
-    color: #d1cdc7;
+    color: #fff;
 }
 
 .tr:nth-of-type {
