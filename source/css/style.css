@@ -272,3 +272,13 @@ p.dark-mode {
 .tr:nth-of-type {
     background-color: #fff;
 }
+
+.textefooter {
+    color: black;
+    text-decoration: none;
+}
+
+.textefooter:hover {
+    color: #5C1919;
+    text-decoration: underline;
+}

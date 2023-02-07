@@ -3,20 +3,20 @@
         <hr>
         <div class="container">
             <div class="row">
-                <div class="col-md-2 text-center">
-                    <a href="Contact.html">Contact</a>
+                <div class="col-md-2 text-center ">
+                    <a class="textefooter" href="Contact.html">Contact</a>
                 </div>
                 <div class="col-md-2 text-center">
-                    <a href="Connexion.html">Connexion</a>
+                    <a class="textefooter" href="Connexion.html">Connexion</a>
                 </div>
                 <div class="col-md-4 text-center">
                     <h3 class="element element3">Le Palais Bordelais</h3>
                 </div>
-                <div class="col-md-2 text-center">
-                    <a href="blog.html">Blog</a>
+                <div class="col-md-2 text-center ">
+                    <a class="textefooter"  href="blog.html">Blog</a>
                 </div>
-                <div class="col-md-2 text-center">
-                    <a href="mentionslegales.html">Mentions Légales</a>
+                <div class="col-md-2 text-center ">
+                    <a class="textefooter" href="mentionslegales.html">Mentions Légales</a>
                 </div>
             </div>
         </div>
@@ -26,3 +26,8 @@
         <hr>
     </div>
 </body>
+
+<style>
+
+
+</style>

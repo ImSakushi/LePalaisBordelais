@@ -1,6 +1,10 @@
 <?php require_once 'header.php';
 $articles = sql_select("ARTICLE", "*", NULL, 'numArt DESC');
-
+$touslesmois = array(
+    "janvier", "février", "mars", "avril", "mai", "juin",
+    "juillet", "août", "septembre", "octobre", "novembre", "décembre"
+);
+$datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
 
 ?>
 
@@ -20,7 +24,11 @@ $articles = sql_select("ARTICLE", "*", NULL, 'numArt DESC');
             <div class="col-md-6">
                 <div class="card-body">
                 <p><br></p>
-                <p>30 Février 2030</p>
+                <p class="card-date"><?php
+                                            list($date, $heure) = explode(" ", $articles[$article]['dtCreArt']);
+                                            list($annee, $mois, $jour) = explode("-", $date);
+                                            echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
+                                            ?></p>
                     <a href="article.php?numArt=<?php echo $articles[$article]['numArt']; ?>" class="card-text"><?php echo $articles[$article]['libAccrochArt'];?></a>
 
                     <p><br></p>
@@ -59,6 +67,13 @@ $articles = sql_select("ARTICLE", "*", NULL, 'numArt DESC');
         <?php endforeach; ?>
     </div>
 </div>
+<?php require_once 'footer.php'; ?>
+<style>
 
+a {
+    color: black;
+    text-decoration: none;
+}
 
+</style>
 
