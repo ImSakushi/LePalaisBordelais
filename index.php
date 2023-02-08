@@ -19,11 +19,11 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
             <div class="card border-0" style="width: 29rem;">
                 <div class="card-body">
                     <?php
-                    // if ($_SESSION['username'] !== "") {
-                    // $user = $_SESSION['username'];
-                    //     // afficher un message
-                    //     echo "Bonjour $user, vous êtes connecté";
-                    // }
+                    if(isset($_SESSION['username'])) {
+                        $user = $_SESSION['username'];
+                            // afficher un message
+                            echo "Bonjour $user, vous êtes connecté";
+                        }
                     ?>
 
         <div class= haut >
