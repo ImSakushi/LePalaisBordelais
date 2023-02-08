@@ -1,5 +1,6 @@
 <?php
 include '../../../header.php'; // contains the header and call to config.php
+include '../../check_access.php';
 //Security check
 //Level 1 mean administator in DB
 /* if (!check_access(1)) {
@@ -15,7 +16,8 @@ $statuses = sql_select("STATUT", "*");
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Status</h1>
+            <h1>Dashboard Admin</h1>
+            <h2>Status</h2>
             <table class="table">
                 <thead>
                     <tr>
@@ -30,16 +32,35 @@ $statuses = sql_select("STATUT", "*");
                             <td><?php echo $status['numStat']; ?></td>
                             <td><?php echo $status['libStat']; ?></td>
                             <td>
-                                <a href="edit.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-primary">Edit</a>
-                                <a href="delete.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="edit.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-outline-dark">Edit</a>
+                                <a href="delete.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-outline-dark">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            <a href="create.php" class="btn btn-success">Create</a>
+            <a href="create.php" class="btn btn-dark">Create</a>
         </div>
     </div>
 
-<?php
-include '../../../footer.php'; // contains the footer
+<style>
+
+th {
+    font-weight:bold;
+    color:#828282;
+}
+
+h1 {
+    text-align:center;
+    padding-top:40px
+}
+
+h2 {
+    font-weight:bold;
+}
+
+th {
+    background-color:#F2F2F2;
+}
+
+</style>

@@ -7,17 +7,17 @@ if(isset($_FILES['urlPhotArt'])){
     move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/source/images/articles/' . $_FILES['urlPhotArt']['name']);
   }
 
-$libTitrArt = '"' . $_POST['libTitrArt'] . '"';
-$libChapoArt = '"' . $_POST['libChapoArt'] . '"';
-$libAccrochArt = '"' . $_POST['libAccrochArt'] . '"';
-$parag1Art = '"' . $_POST['parag1Art'] . '"';
-$libSsTitr1Art = '"' . $_POST['libSsTitr1Art'] . '"';
-$parag2Art = '"' . $_POST['parag2Art'] . '"';
-$libSsTitr2Art = '"' . $_POST['libSsTitr2Art'] . '"';
-$parag3Art = '"' . $_POST['parag3Art'] . '"';
-$libConclArt = '"' . $_POST['libConclArt'] . '"';
+$libTitrArt = '"' . sql_escape($_POST['libTitrArt']) . '"';
+$libChapoArt = '"' . sql_escape($_POST['libChapoArt']) . '"';
+$libAccrochArt = '"' . sql_escape($_POST['libAccrochArt']) . '"';
+$parag1Art = '"' . sql_escape($_POST['parag1Art']) . '"';
+$libSsTitr1Art = '"' . sql_escape($_POST['libSsTitr1Art']) . '"';
+$parag2Art = '"' . sql_escape($_POST['parag2Art']) . '"';
+$libSsTitr2Art = '"' . sql_escape($_POST['libSsTitr2Art']) . '"';
+$parag3Art = '"' . sql_escape($_POST['parag3Art']) . '"';
+$libConclArt = '"' . sql_escape($_POST['libConclArt']) . '"';
 $urlPhotArt = '"' . $_FILES['urlPhotArt']['name'] . '"';
-$numThem = $_POST['numThem'];
+$numThem = sql_escape($_POST['numThem']);
 
 
 

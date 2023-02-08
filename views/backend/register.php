@@ -75,11 +75,6 @@ if (isset($_POST['submit'])) {
 </div>
 
 
-<?php
-include '../../footer.php';
-?>
-
-
 
 <style>
     .login-page {

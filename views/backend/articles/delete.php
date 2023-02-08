@@ -8,6 +8,7 @@
 } */
 
 include '../../../header.php';
+include '../../check_access.php';
 
 $numArt = $_GET['numArt'];
 $libTitrArt = sql_select("ARTICLE", "libTitrArt", "numArt = $numArt")[0]['libTitrArt'];

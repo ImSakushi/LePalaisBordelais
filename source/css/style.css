@@ -20,12 +20,12 @@ header {
     background-color: #5C1919;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-
 }
 
 .headertext {
     text-decoration: none;
     color: #fff;
+    font-family: 'Roboto', serif;
     font-size: 1.1rem;
     margin-right: 1.3rem;
     margin-left: 1.3rem;
@@ -33,10 +33,11 @@ header {
 
 .headertitre {
     text-decoration: none;
-    font-family: 'Alice', serif;
     color: #fff;
-    font-size: 1.5rem;
-    margin-right: 10px;
+    font-family: 'Alice', serif;
+    font-size: 1.6rem;
+    margin-right: 1.3rem;
+    margin-left: 1.3rem;
 }
 
 .headertext:hover {
@@ -273,49 +274,6 @@ p.dark-mode {
     background-color: #fff;
 }
 
-.textefooter {
-    color: black;
-    text-decoration: none;
-}
-
-.textefooter:hover {
-    color: #5C1919;
-    text-decoration: underline;
-}
-
-
-.footer{
-    background-color:#F2F2F2 ;
-}
-
-.footer h3 {
-    
-    font-family: 'Alice';
-    font-weight:400;
-    text-align: center;
-}
-
-.date {
-    text-align: center;
-    font-family: 'roboto';
-    font-size: small;
-}
-
-.footer hr {
-    padding-bottom: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-
-}
-
-
-
-.footer a {
-    color :black;
-    text-decoration:none;
-}
-
-.margefooter{
-    margin-left: 10%;
-    margin-right: 10%;
+.container-homepage {
+    max-width: 1200px;
 }

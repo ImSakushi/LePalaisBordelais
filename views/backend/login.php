@@ -11,9 +11,11 @@ if (isset($_POST['submit'])) {
         if ($testusername[0][0] == $username) {
             $testpassword = sql_select("MEMBRE", "passMemb", "passMemb = '$password'");
             if ($testpassword[0][0] == $password) {
-                session_start();
-                $_SESSION["username"] = $username;
-                header("location: ../../index.php");
+               header("location: ../../index.php");
+               session_start();
+               $_SESSION["username"] = $username;
+               $id_user = sql_select("MEMBRE", "numStat", "pseudoMemb = '$username'")[0]['numStat'];
+               $_SESSION["id_user"] = $id_user;
             } else {
                 $error = "Les identifiants sont invalides.";
             }
@@ -36,7 +38,7 @@ if (isset($_POST['submit'])) {
         </div>
 
         <?php if (isset($error)) { echo '<p class="error">' . $error . '</p>'; } ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form class="login-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input class="username" type="text" name="username" placeholder="Nom d'utilisateur">
             <input class="password" type="password" name="password" placeholder="Mot de passe">
             <button name="submit" type="submit">Se connecter</button>
@@ -44,11 +46,6 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 </div>
-
-<?php
-include '../../footer.php';
-?>
-
 <style>
 .login-page {
     background-color: #f2f2f2;
@@ -74,7 +71,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-form {
+.login-flex {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,6 +1,6 @@
 <?php
 include '../../../header.php';
-
+include '../../check_access.php';
 ?>
 
 <!--Bootstrap form to create a new status-->

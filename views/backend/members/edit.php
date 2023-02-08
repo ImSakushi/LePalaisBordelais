@@ -8,6 +8,7 @@
 } */
 
 include '../../../header.php';
+include '../../check_access.php';
 
 $numMemb = $_GET['numMemb'];
 $prenomMemb = sql_select("MEMBRE", "prenomMemb", "numMemb = $numMemb")[0]['prenomMemb'];
@@ -25,7 +26,8 @@ $numStat = sql_select("MEMBRE", "numStat", "numMemb = $numMemb")[0]['numStat'];
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Modifier cet utilisateur</h1>
+            <h1>Dashboard Admin</h1>
+            <h2>Modifiez votre article</h2>
         </div>
         <div class="col-md-12">
             <!--Form to create a new articles-->
@@ -56,9 +58,28 @@ $numStat = sql_select("MEMBRE", "numStat", "numMemb = $numMemb")[0]['numStat'];
                     <input type="date" name="dtCreaMemb" id="dtCreaMemb" value="<?php echo $date?>" placeholder="Date de création">
                 </div>
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary">Appliquer les modifications</button>
+                    <button type="submit" class="btn btn-dark">Appliquer les modifications</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+
+h1 {
+    text-align:center;
+    padding:40px
+}
+
+h2 {
+    font-weight:bold;
+}
+
+label {
+    font-weight:bold;
+    color:#828282;
+
+} 
+
+</style>

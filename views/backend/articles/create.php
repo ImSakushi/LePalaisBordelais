@@ -1,5 +1,6 @@
 <?php
 include '../../../header.php';
+include '../../check_access.php';
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,8 @@ include '../../../header.php';
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Écrire un nouvel article</h1>
+            <h1>Dashboard Admin</h1>
+            <h2>Écrire un nouvel article</h2>
         </div>
         <div class="col-md-12">
             <!--Form to create a new status-->
@@ -74,9 +76,28 @@ include '../../../header.php';
                     <input id="urlPhotArt" type="file" name="urlPhotArt" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
                 </div>
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary color-5C1919">Publier l'article</button>
+                    <button type="submit" class="btn btn-dark">Publier l'article</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+
+label {
+    font-weight:bold;
+    color:#828282;
+
+}
+
+h1 {
+    text-align:center;
+    padding:40px
+}
+
+h2 {
+    font-weight:bold;
+}
+
+</style>

@@ -1,5 +1,6 @@
 <?php
 
+
 //Security check
 //Level 1 mean administator in DB
 /* if (!check_access(1)) {
@@ -8,6 +9,7 @@
 } */
 
 include '../../../header.php';
+include '../../check_access.php';
 
 $numArt = $_GET['numArt'];
 $libTitrArt = sql_select("ARTICLE", "libTitrArt", "numArt = $numArt")[0]['libTitrArt'];
@@ -30,7 +32,8 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Modifier votre article</h1>
+            <h1>Dashboard Admin</h1>
+            <h2>Modifier votre article</h2>
         </div>
         <div class="col-md-12">
             <!--Form to create a new articles-->
@@ -88,9 +91,26 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
                     <input type="date" name="dtCreArt" id="dtCreArt" value="<?php echo $date?>" placeholder="Date de création">
                 </div>
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary">Appliquer les modifications</button>
+                    <button type="submit" class="btn btn-dark">Appliquer les modifications</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+h1 {
+    text-align:center;
+    padding:40px
+}
+
+h2 {
+    font-weight:bold;
+}
+
+label {
+    font-weight:bold;
+    color:#828282;
+
+}
+</style>

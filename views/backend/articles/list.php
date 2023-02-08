@@ -1,5 +1,6 @@
 <?php
 include '../../../header.php'; // contains the header and call to config.php
+include '../../check_access.php';
 //Security check
 //Level 1 mean administator in DB
 /* if (!check_access(1)) {
@@ -15,7 +16,8 @@ $articles = sql_select("ARTICLE", "*");
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Articles</h1>
+            <h1>Dashboard Admin</h1>
+            <h2>Articles</h2>
             <table class="table">
                 <thead>
                     <tr>
@@ -30,17 +32,38 @@ $articles = sql_select("ARTICLE", "*");
                             <td><?php echo $article['libTitrArt']; ?></td>
                             <td><?php echo $article['numArt']; ?></td>
                             <td>
-                                <a href="../../../article.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-success">Voir</a>
-                                <a href="edit.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-warning">Modifier</a>
-                                <a href="delete.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-danger">Supprimer</a>
+                                <a href="../../../article.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-outline-dark">Voir</a>
+                                <a href="edit.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-outline-dark">Modifier</a>
+                                <a href="delete.php?numArt=<?php echo $article['numArt']; ?>" class="btn btn-outline-dark">Supprimer</a>
                             </td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            <a href="create.php" class="btn btn-success">Create</a>
+            <a href="create.php" class="btn btn-dark">Create</a>
         </div>
     </div>
 
-<?php
-include '../../../footer.php'; // contains the footer
+<style>
+
+th {
+    font-weight:bold;
+    color:#828282;
+}
+
+h1 {
+    text-align:center;
+    padding-top:40px
+}
+
+h2 {
+    font-weight:bold;
+}
+
+th {
+    background-color:#F2F2F2;
+}
+
+
+</style>
+
