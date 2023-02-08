@@ -25,21 +25,37 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                     //     echo "Bonjour $user, vous êtes connecté";
                     // }
                     ?>
+
+        <div class= haut >
+
                     <p class="card-date"><?php
                                             list($date, $heure) = explode(" ", $articles[0]['dtCreArt']);
                                             list($annee, $mois, $jour) = explode("-", $date);
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[0]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-article-une" alt="Festival de Bordeaux S.O GOOD" style="object-fit: cover; object-position: 50% 0; border-radius: 25px 25px 25px 25px;">
+                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-article-une" alt="Festival de Bordeaux S.O GOOD" style="object-fit: cover; object-position: 50% 0; border-radius: 25px 25px 25px 25px; width:450px;height:400px">
                     <p class="card-text"><?php echo $articles[0]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
-                </div>
+                </div>   
             </div>
+                
+            <p><br></p>
+            <div class = voirplus>
+            <div class="d-grid gap-2">
+                        <button class="btn btn-outline-dark" type="button">Voir plus d'articles</button>
+            </div>
+            </div>
+
         </div>
+
+        </div>
+    
         <div class="col">
             <div class="card border-0" style="width: 28rem;">
                 <div class="card-body">
+
+                <div class= haut >
                     <p class="card-date"><?php
                                             list($date, $heure) = explode(" ", $articles[1]['dtCreArt']);
                                             list($annee, $mois, $jour) = explode("-", $date);
@@ -63,6 +79,8 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                     <p class="card-text"><?php echo $articles[2]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -84,3 +102,21 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
         window.location.href = 'article.php?numArt=<?php echo $articles[2]['numArt']; ?>';
     });
 </script>
+
+<style>
+
+.voirplus{
+    width:95%;
+    
+    padding-left : 20px;
+}
+
+.haut {
+    padding-top:60px;
+}
+.haut2 {
+    padding-top:50px;
+    
+}
+
+</style>
