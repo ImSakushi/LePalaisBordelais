@@ -19,7 +19,9 @@ $touslesmois = array(
         <div class="row g-0">
             <div class="col-md-6">
             <h5 class="card-title"><?php echo $articles[$article]['libTitrArt'];?></h5>
-                <img src="source/images/articles/<?php echo $articles[$article]['urlPhotArt'];?>" class="img-fluid img-article" style="width: 547px; height: 249px; object-fit: cover; object-position: 50% 0;" alt="...">
+            <a href="article.php?numArt=<?php echo $articles[$article]['numArt']; ?>">
+                <img src="source/images/articles/<?php echo $articles[$article]['urlPhotArt'];?>" class="img-fluid img-article" style="width: 547px; height: 249px; object-fit: cover; object-position: 50% 0;" alt="image article">
+            </a>
             </div>
             <div class="col-md-6">
                 <div class="card-body">
@@ -55,7 +57,7 @@ $touslesmois = array(
 
                     <p><br></p>
                     <div class="d-grid gap-2 col-12 mx-auto">
-                    <button class="btn btn-outline-dark" type="button">Lire l'article</button>
+                    <button onclick="location.href='article.php?numArt=<?php echo $articles[$article]['numArt']; ?>';" class="btn btn-outline-dark" type="button">Lire l'article</button>
                     </div>
                     
                 </div>

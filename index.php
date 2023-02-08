@@ -34,7 +34,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[0]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-article-une" alt="Festival de Bordeaux S.O GOOD" style="object-fit: cover; object-position: 50% 0; border-radius: 25px 25px 25px 25px; width:450px;height:400px">
+                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-article-une" alt="image article à la une" style="object-fit: cover; object-position: 50% 0; border-radius: 25px 25px 25px 25px; width:450px;height:400px">
                     <p class="card-text"><?php echo $articles[0]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>   
@@ -62,7 +62,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[1]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[1]['urlPhotArt']; ?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                    <img src="source/images/articles/<?php echo $articles[1]['urlPhotArt']; ?>" class="img-article" alt="image article à la une 2" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
                     <p class="card-text"><?php echo $articles[1]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
@@ -75,7 +75,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[2]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt']; ?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                    <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt']; ?>" class="img-article" alt="image article à la une 3" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
                     <p class="card-text"><?php echo $articles[2]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
