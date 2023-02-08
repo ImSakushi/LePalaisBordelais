@@ -47,8 +47,9 @@ if (isset($_POST['submit'])) {
 </div>
 </div>
 <?php
-include 'footer.php';
+include '../../footer.php';
 ?>
+
 <style>
 .login-page {
     background-color: #f2f2f2;
