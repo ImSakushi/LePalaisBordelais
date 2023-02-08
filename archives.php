@@ -4,7 +4,7 @@ $touslesmois = array(
     "janvier", "février", "mars", "avril", "mai", "juin",
     "juillet", "août", "septembre", "octobre", "novembre", "décembre"
 );
-$datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
+
 
 ?>
 
