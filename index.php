@@ -43,7 +43,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
             <p><br></p>
             <div class = voirplus>
             <div class="d-grid gap-2">
-                        <button class="btn btn-outline-dark" type="button">Voir plus d'articles</button>
+                        <button onclick="location.href='/archives.php'" class="btn btn-outline-dark" type="button">Voir plus d'articles</button>
             </div>
             </div>
 
@@ -75,7 +75,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[2]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt']; ?>" class="img-article" alt="image article à la une 3" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                    <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt']; ?>" class="img-article" alt="image article à la une 2" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
                     <p class="card-text"><?php echo $articles[2]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
@@ -89,7 +89,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
 <?php require_once 'footer.php'; ?>
 
 <script>
-    const cards = document.querySelectorAll('.card.border-0');
+    const cards = document.querySelectorAll('.card-body');
     cards[0].addEventListener('click', function(e) {
         window.location.href = 'article.php?numArt=<?php echo $articles[0]['numArt']; ?>';
     });

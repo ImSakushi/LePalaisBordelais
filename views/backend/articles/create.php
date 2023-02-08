@@ -35,7 +35,7 @@ include '../../../header.php';
                 </div>
                 <div class="form-group">
                     <label for="libAccrochArt">Accroche<span>*</span></label>
-                    <textarea id="libAccrochArt" class="form-control" rows="2"  maxlength="150" cols="10" required placeholder="Ajouter du texte (150 caractères max)" type="text" name="libAccrochArt"></textarea>
+                    <textarea id="libAccrochArt" class="form-control" rows="2"  maxlength="100" cols="10" required placeholder="Ajouter du texte (150 caractères max)" type="text" name="libAccrochArt"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="parag1Art">Paragraphe 1<span>*</span></label>
