@@ -13,7 +13,6 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
 
 // print_r(curl("https://reqres.in/api/users", "POST", '{"name": "morpheus", "job": "leader"}'));
 ?>
-
 <div class="cookie-card">
     <p class = "title">Cookies consentement</p> 
     <p class="info">Avec votre accord, nous utilisons des cookies
@@ -22,22 +21,20 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
         ou vous opposer aux traitements basés sur l'intérêt légitime à tout 
         moment en cliquant sur "En savoir plus" ou dans notre politique de 
         confidentialité sur ce site. <a href="#"> En savoir plus</a></p>
-        <button class ="cta"> Oui, j'accepte</button>
-        <a href="#">Paramètres Cookies</a>
+        <button onclick="location.href='accept_cookies.php'" class ="cta"> Oui, j'accepte</button>
+        <a class="lien-cookie" href="#">Paramètres Cookies</a>
 </div>
-
-
 <div class="container">
     <div class="row">
         <div class="col">
             <div class="card border-0" style="width: 29rem;">
                 <div class="card-body">
                     <?php
-                    // if ($_SESSION['username'] !== "") {
-                    // $user = $_SESSION['username'];
-                    //     // afficher un message
-                    //     echo "Bonjour $user, vous êtes connecté";
-                    // }
+                    // if(isset($_SESSION['username'])) {
+                    //     $user = $_SESSION['username'];
+                    //         // afficher un message
+                    //         echo "Bonjour $user, vous êtes connecté";
+                    //     }
                     ?>
 
         <div class= haut >
@@ -48,7 +45,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[0]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-article-une" alt="Festival de Bordeaux S.O GOOD" style="object-fit: cover; object-position: 50% 0; border-radius: 25px 25px 25px 25px; width:450px;height:400px">
+                    <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-article-une" alt="image article à la une" style="object-fit: cover; object-position: 50% 0; border-radius: 25px 25px 25px 25px; width:450px;height:400px">
                     <p class="card-text"><?php echo $articles[0]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>   
@@ -57,7 +54,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
             <p><br></p>
             <div class = voirplus>
             <div class="d-grid gap-2">
-                        <button class="btn btn-outline-dark" type="button">Voir plus d'articles</button>
+                        <button onclick="location.href='/archives.php'" class="btn btn-outline-dark" type="button">Voir plus d'articles</button>
             </div>
             </div>
 
@@ -76,7 +73,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[1]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[1]['urlPhotArt']; ?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                    <img src="source/images/articles/<?php echo $articles[1]['urlPhotArt']; ?>" class="img-article" alt="image article à la une 2" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
                     <p class="card-text"><?php echo $articles[1]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
@@ -89,7 +86,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
                                             ?></p>
                     <h5 class="card-title"><?php echo $articles[2]['libTitrArt']; ?></h5>
-                    <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt']; ?>" class="img-article" alt="Festival de Bordeaux S.O GOOD" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
+                    <img src="source/images/articles/<?php echo $articles[2]['urlPhotArt']; ?>" class="img-article" alt="image article à la une 2" style="width: 384.02px; height: 215.22px; object-fit: cover; object-position: 50% 0;">
                     <p class="card-text"><?php echo $articles[2]['libAccrochArt']; ?></p>
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
@@ -103,7 +100,7 @@ $datearticle = $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
 <?php require_once 'footer.php'; ?>
 
 <script>
-    const cards = document.querySelectorAll('.card.border-0');
+    const cards = document.querySelectorAll('.card-body');
     cards[0].addEventListener('click', function(e) {
         window.location.href = 'article.php?numArt=<?php echo $articles[0]['numArt']; ?>';
     });
@@ -179,7 +176,7 @@ color:white;
     background-color:#938A89;
 }
 
-a {
+.lien-cookie {
     text-decoration:none;
     border-bottom:1px  solid;
     transition : color 0.4s; 

@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>footer</title>
-    <link rel="stylesheet" href="/source/css/style.css">
-    <link rel="stylesheet" href="/source/css/reset.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
 <body>
     <div class = footer >
         <hr>
@@ -71,4 +60,53 @@
 
 
 </body>
-</html>
+
+<style>
+.textefooter {
+    color: black;
+    text-decoration: none;
+}
+
+.textefooter:hover {
+    color: #5C1919;
+    text-decoration: underline;
+}
+
+
+.footer{
+    background-color:#F2F2F2 ;
+}
+
+.footer h3 {
+    
+    font-family: 'Alice';
+    font-weight:400;
+    text-align: center;
+}
+
+.date {
+    text-align: center;
+    font-family: 'roboto';
+    font-size: small;
+}
+
+.footer hr {
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+
+
+.footer a {
+    color :black;
+    text-decoration:none;
+}
+
+.margefooter{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+</style>
