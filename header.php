@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
   <!-- Load CSS -->
   <link rel="stylesheet" href="/source/css/style.css">
+  <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="/source/css/reset.css">
   <!-- Load JS scripts -->
   <script src="/source/js/script.js" defer></script>
@@ -22,41 +23,56 @@ session_start();
 //load php scripts
 ?>
 
-<body>
-  <header>
-    <div class="leftheader">
-      <img src="/source/images/logo.svg" alt="logo du palais bordelais" class="logo">
-      <div class="textleftheader">
-        <a href="/index.php" class="headertitre">LE PALAIS BORDELAIS</a>
-        <a href="/archives.php" class="headertext">Archives</a>
-        <a href="/views/backend/dashboard.php" class="headertext">Recommandations</a>
-        <a href="#" class="headertext">Recettes</a>
-        <a href="#" class="headertext">Histoires</a>
-      </div>
-    </div>
-    <div class="button-emplacement">
-      <div class="dark-mode-container">
-        <button type="button" class="btn-dark-mode">
-          <img src="/source/images/ampoule-off.svg" id="ampoule" alt="ampoule dark mode">
-        </button>
-      </div>
-      <div class="search-container">
-        <button type="button" class="btn-search">
-          <img src="/source/images/Recherche.svg" alt="bouton recherche" style="width: 2.625rem; height: 2.625rem; object-fit: cover;">
-        </button>
-        <input type="text" class="search-bar">
-      </div>
-      <?php
-      if (isset($_SESSION['username']) && $_SESSION['username'] !== "") {
-        $user = $_SESSION['username'];
-        echo '<button onclick="window.location.href=\'/views/backend/logout.php\';" type="button" class="btn btn-outline-danger btn-lg">Déconnexion</button>';
-      } else {
-        echo '<button onclick="window.location.href=\'/views/backend/login.php\';" type="button" class="btn btn-outline-danger btn-lg">Connexion</button>';
-      }
-      ?>
 
+
+<body>
+  <nav class="navbar-default">
+    <nav class="navbar navbar-expand-lg -body-tertiary" style="background-color: rgb(92, 25, 25);">
+        <div class="container-fluid">
+            <nav class="navbar -body-tertiary">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                    <img src="Capture d’écran 2023-02-07 à 10.31.32.png" alt="logo" width="50" height="50" class="img">
+                  </a>
+                </div>
+              </nav>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                 <a class="nav-link active text-white" class="archi" aria-current="page" href="#">Archives      </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" >Recommandation     </a>  
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Recettes
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul> 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled text-white">Histoire       </a>
+              </li>
+            </ul>
+            <form class="d-flex text-white" role="search">
+              <input class="form-control me-2" type="search" placeholder="Recherche..." aria-label="search">
+              <button class="btn btn-outline-success" type="submit">Connexion </button>
+            </div>
+            </form>
+          </div>
+        </div>
     </div>
-  </header>
+  </nav>
+</body>
 
   <script>
     const searchBtn = document.querySelector('.btn-search');
