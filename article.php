@@ -47,3 +47,7 @@ $theme = $articledata[0]['numThem'];
     </div>
 </body>
 </html>
+
+<?php
+include 'footer.php';
+?>
