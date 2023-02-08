@@ -10,7 +10,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
   <!-- Load CSS -->
   <link rel="stylesheet" href="/source/css/style.css">
-  <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="/source/css/reset.css">
   <!-- Load JS scripts -->
   <script src="/source/js/script.js" defer></script>
@@ -23,49 +22,50 @@ session_start();
 //load php scripts
 ?>
 
-
-
 <body>
   <nav class="navbar-default">
     <nav class="navbar navbar-expand-lg -body-tertiary" style="background-color: rgb(92, 25, 25);">
         <div class="container-fluid">
             <nav class="navbar -body-tertiary">
                 <div class="container">
-                  <a class="navbar-brand" href="#">
-                    <img src="Capture d’écran 2023-02-07 à 10.31.32.png" alt="logo" width="50" height="50" class="img">
+                  <a class="navbar-brand" href="/index.php">
+                    <img src="/source/images/logo.svg" alt="logo" width="50" height="50" class="img">
                   </a>
                 </div>
               </nav>
-        
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                 <a class="nav-link active text-white" class="archi" aria-current="page" href="#">Archives      </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="align-items: center;">
+            <li class="nav-item">
+                 <a class="nav-link active text-white headertitre" class="archi" aria-current="page" href="/index.php">LE PALAIS BORDELAIS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" >Recommandation     </a>  
+                 <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="/archives.php">Archives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="/views/backend/dashboard.php" >Recommandation</a>  
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="#">
                   Recettes
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"></a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul> 
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled text-white">Histoire       </a>
+                <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="#">Histoire</a>
               </li>
             </ul>
             <form class="d-flex text-white" role="search">
-              <input class="form-control me-2" type="search" placeholder="Recherche..." aria-label="search">
-              <button class="btn btn-outline-success" type="submit">Connexion </button>
+              <input class="form-control me-2 searchbar" type="search" placeholder="Recherche..." aria-label="search">
+              <?php
+              if (isset($_SESSION['username']) && $_SESSION['username'] !== "") {
+              $user = $_SESSION['username'];
+              echo '<button onclick="window.location.href=\'/views/backend/logout.php\'" type="button" class="btn btn-outline-danger btn-lg">Déconnexion</button>';
+            } else {
+              echo '<button onclick="window.location.href=\'/views/backend/login.php\'" type="button" class="btn btn-outline-danger btn-lg">Connexion</button>';
+            }
+            ?>
             </div>
             </form>
           </div>
@@ -73,32 +73,41 @@ session_start();
     </div>
   </nav>
 </body>
+</html>
 
-  <script>
-    const searchBtn = document.querySelector('.btn-search');
-    const searchBar = document.querySelector('.search-bar');
-    const ampouleBtn = document.querySelector('.dark-mode-container');
-    const footer = document.querySelector('footer');
-    const ampouleImg = document.querySelector('#ampoule');
+<style>
 
 
+.btn-outline-success {
+    background-color:rgb(92, 25, 25);
+    color: white;
+    border: 1px solid black;
+}
 
-    searchBtn.addEventListener('click', function() {
-      searchBar.classList.toggle('active');
-      ampouleBtn.classList.toggle('active');
-    });
+.btn-outline-success:hover{
+  background-color: white;
+  color: black;
+  border: 2% black;
+}
+    
+.btn-lg {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 
+.searchbar{
+    background-color:rgb(37, 11, 11);
+}
+.searchbar::placeholder{
+    color: white;
+}
+.searchbar{
 
-    ampouleBtn.addEventListener('click', function() {
-      if (ampouleImg.getAttribute("src") == "/source/images/ampoule-off.svg") {
-        ampouleImg.setAttribute("src", "/source/images/ampoule-on.svg");
-      } else {
-        ampouleImg.setAttribute("src", "/source/images/ampoule-off.svg");
-      }
-      document.body.classList.toggle('dark-mode');
-      footer.classList.toggle('dark-mode');
-      document.querySelectorAll("body *").forEach(function(el) {
-        el.style.color = "white";
-      });
-    });
-  </script>
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;       
+}
+.navbar-toggler{
+    background-color: white;
+}
+</style>
