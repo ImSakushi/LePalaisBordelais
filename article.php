@@ -45,9 +45,57 @@ $theme = $articledata[0]['numThem'];
         <div class="text-left fs-5 paragraphe-text"><p><?php echo $paragraphe3 ?></p></div>
         <div class="text-left fs-5 paragraphe-text"><p><?php echo $conclusion ?></p></div>
     </div>
+
+
+    <div class=container>
+        <h2>D'autres articles</h2>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
+            </div>
+            <div class="col-6">
+                <h3>Titre Article</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    llamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <p><br></p>
+            <div class="col-3">
+                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
+            </div>
+            <div class="col-3">
+                <h4>Titre Article</h4>
+                <p>chapeau.</p>
+            </div>
+            <div class="col-3">
+                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
+            </div>
+            <div class="col-3">
+                <h4>Titre Article</h4>
+                <p>chapeau.</p>
+            </div>
+            
+            </div>
+
+            
+        </div>
+        
+    </div>
+    
 </body>
 </html>
 
-<?php
-include 'footer.php';
-?>
+<style>
+h2 {
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.img-article1 {
+    width:400px;
+    height:250px;
+    border-radius: 15px;
+}
+</style>
