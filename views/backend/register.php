@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
         <?php if (isset($error)) {
             echo '<p class="error">' . $error . '</p>';
         } ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form class="login-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input class="pseudo" type="text" name="username" placeholder="Pseudo">
             <div class="row">
                 <div class="col-md-6">
@@ -101,11 +101,11 @@ if (isset($_POST['submit'])) {
         margin-bottom: 20px;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.login-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
     .username,
     .password {
@@ -152,3 +152,7 @@ if (isset($_POST['submit'])) {
 
     }
 </style>
+
+<?php
+include 'footer.php';
+?>
