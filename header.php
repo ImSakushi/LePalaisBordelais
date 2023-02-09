@@ -96,10 +96,12 @@ session_start();
 }
 
 .searchbar{
-    background-color:rgb(37, 11, 11);
+    background-color: #401313;
+    border : 1px solid #250B0B;
+    
 }
 .searchbar::placeholder{
-    color: white;
+    color: #858585;
 }
 .searchbar{
 

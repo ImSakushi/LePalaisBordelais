@@ -251,7 +251,6 @@ td {
 
 p {
     color: black;
-    line-height: 1.2em;
 }
 
 p.dark-mode {
@@ -278,4 +277,3 @@ p.dark-mode {
 .container-homepage {
     max-width: 1200px;
 }
-

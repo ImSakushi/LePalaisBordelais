@@ -83,12 +83,9 @@ $theme = $articledata[0]['numThem'];
         </div>
         
     </div>
-    <br>
-    <br>
+    
 </body>
 </html>
-
-<?php require_once 'footer.php'; ?>
 
 <style>
 h2 {
@@ -102,3 +99,5 @@ h2 {
     border-radius: 15px;
 }
 </style>
+
+<?php require_once 'footer.php'; ?>

@@ -10,12 +10,11 @@ if (isset($_POST['submit'])) {
         $testusername = sql_select("MEMBRE", "pseudoMemb", "pseudoMemb = '$username'");
         if ($testusername[0][0] == $username) {
             $testpassword = sql_select("MEMBRE", "passMemb", "passMemb = '$password'");
-            echo $testpassword[0][0];
-            if (password_verify($password, $testpassword[0][0])) {
+            if ($testpassword[0][0] == $password) {
                header("location: ../../index.php");
                session_start();
                $_SESSION["username"] = $username;
-               $id_user = sql_select("MEMBRE", "numStat", "pseudoMemb = '$username'")[0]['numStat'];
+               $id_user = sql_select("MEMBRE", "numStat", "pseudoMemb = $username")[0]['numStat'];
                $_SESSION["id_user"] = $id_user;
             } else {
                 $error = "Les identifiants sont invalides.";
@@ -30,7 +29,7 @@ if (isset($_POST['submit'])) {
 <div class="login-page">
     <div class="login-container">
         <h1>Connexion</h1>
-        <p><?php echo sql_select("MEMBRE", "passMemb", "passMemb = '$password'");?></p>
+
         <div class="row g-0">
             <div class="col-md-12">
                 <p>Vous n'avez pas de compte ?<a href="register.php"> S'inscrire</a></p> 
@@ -39,7 +38,7 @@ if (isset($_POST['submit'])) {
         </div>
 
         <?php if (isset($error)) { echo '<p class="error">' . $error . '</p>'; } ?>
-        <form class="login-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input class="username" type="text" name="username" placeholder="Nom d'utilisateur">
             <input class="password" type="password" name="password" placeholder="Mot de passe">
             <button name="submit" type="submit">Se connecter</button>
@@ -47,9 +46,6 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 </div>
-<?php
-include 'footer.php';
-?>
 <style>
 .login-page {
     background-color: #f2f2f2;
@@ -75,7 +71,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.login-flex {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,4 +111,3 @@ a {
 
 
 </style>
-

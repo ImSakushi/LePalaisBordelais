@@ -1,3 +1,9 @@
+<?php
+
+
+
+?>
+
 <body>
     <div class = footer >
         <hr>
@@ -28,32 +34,29 @@
                     </div>
                     </div>
                 </div>
-                
-                
                 <div class="col">
                     <div class="container text-center">
                         <div class="margefooter">
                             <div class="row align-item center">
-
                                 <div class="col">
                                     <a href="blog.html">Blog</a>
                                 </div>
-
                                 <div class="col">
-                                    <a href="mentionslegales.html">Mentions Légales</a>
+                                    <a href="mentionslegales.php">Mentions Légales</a>
                                 </div> 
-
                             </div>
                         </div>
                     </div>    
                 </div>
-                
-            
             </div>
         </div>
 
         <div class = date > 
-            <p>© 2023</p>
+            <p>©2023</p>
+            <p> <?php if(isset($_SESSION['username'])) {
+                $user = $_SESSION['username'];
+                echo "$user, vous êtes connecté";
+                }?></p>
         </div>
         <hr>
     </div>

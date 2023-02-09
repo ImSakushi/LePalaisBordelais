@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
     // $password = password_hash($password, PASSWORD_DEFAULT);
     // echo $password;
@@ -27,12 +28,11 @@ if (isset($_POST['submit'])) {
                         if ($testemail[0][0] == $email) {
                             $error = "L'adresse e-mail est déjà utilisée.";
                         } else {
-                            sql_insert("MEMBRE", "pseudoMemb, nomMemb, prenomMemb, emailMemb, passMemb", "'$username', '$nom', '$prenom', '$email', '$password'");
-                            $result = sql_insert("MEMBRE", "pseudoMemb, nomMemb, prenomMemb, emailMemb, passMemb, numStat", "'$username', '$nom', '$prenom', '$email', '$password', 3");
+                            $result = sql_insert("MEMBRE", "pseudoMemb, nomMemb, prenomMemb, emailMemb, passMemb, numStat", "'$username', '$nom', '$prenom', '$email', '$passwordHash', 3");
                             if ($result) {
+                                header("location: ../../index.php");
                                 session_start();
                                 $_SESSION["username"] = $username;
-                                header("location: ../../index.php");
                             } else {
                                 $error = "Les identifiants sont invalides.";
                         }
@@ -74,9 +74,7 @@ if (isset($_POST['submit'])) {
 </div>
 </div>
 
-<?php
-include '../../footer.php';
-?>
+
 
 <style>
     .login-page {
@@ -155,3 +153,6 @@ include '../../footer.php';
     }
 </style>
 
+<?php
+include 'footer.php';
+?>
