@@ -31,7 +31,7 @@ $theme = $articledata[0]['numThem'];
 </head>
 <body>
     <div class="container">
-        <p><br><br></p>
+        <p><br></p>
         <div class="text-center"><h1 class="fw-bolder" ><?php echo $titre ?></h1></div>
         <p><br></p>
         <div class="text-center"><h2><?php echo $chapo ?></h2></div>
@@ -50,7 +50,7 @@ $theme = $articledata[0]['numThem'];
     <div class=container>
         <h2>D'autres articles</h2>
 
-        <div class="row">
+        <div class="row pb-5">
             <div class="col-6">
                 <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
             </div>
@@ -85,7 +85,6 @@ $theme = $articledata[0]['numThem'];
     </div>
     
 </body>
-<br><br><br>
 </html>
 
 <style>
