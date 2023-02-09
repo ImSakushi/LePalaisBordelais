@@ -21,6 +21,20 @@ $numThem = sql_escape($_POST['numThem']);
 
 
 
+
+
+
+
+
 sql_insert("ARTICLE", "libTitrArt, libChapoArt, libAccrochArt, parag1Art, libSsTitr1Art, parag2Art, libSsTitr2Art, parag3Art, libConclArt, urlPhotArt, numThem", "$libTitrArt, $libChapoArt, $libAccrochArt, $parag1Art, $libSsTitr1Art, $parag2Art, $libSsTitr2Art, $parag3Art, $libConclArt, $urlPhotArt, $numThem");
+
+if(isset($_POST['keywords']))
+{
+   foreach($_POST['keywords'] as $keyword)
+   {
+      $numArt = sql_select("ARTICLE", "numArt", "parag1Art = $parag1Art")[0]['numArt'];
+      sql_insert("MOTCLEARTICLE", "numMotCle, numArt", "$keyword, $numArt");
+   }
+}
 
 header('Location: ../../views/backend/articles/list.php');

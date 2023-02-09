@@ -18,7 +18,7 @@ $libThem = sql_select("THEMATIQUE", "libThem", "numThem = $numThem")[0]['libThem
             <!--Form to create a new status-->
             <form action="<?php echo ROOT_URL . '/api/thematiques/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="libThem">Nom du statut :</label>
+                    <label for="libThem">Nom de la thématique :</label>
                     <input id="numThem" class="form-control" type="text" style="display: none;" name="numThem" value="<?php echo($numThem) ?>" readonly="readonly" >
                     <input id="libThem" class="form-control" type="text" name="libThem" value="<?php echo($libThem) ?>" readonly="readonly">
                 </div>

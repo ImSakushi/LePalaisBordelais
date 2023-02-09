@@ -13,6 +13,7 @@
 include '../../../header.php';
 include '../../check_access.php';
 $thematiques = sql_select("THEMATIQUE", "*");
+
 $numArt = $_GET['numArt'];
 $libTitrArt = sql_select("ARTICLE", "libTitrArt", "numArt = $numArt")[0]['libTitrArt'];
 $libChapoArt = sql_select("ARTICLE", "libChapoArt", "numArt = $numArt")[0]['libChapoArt'];
@@ -27,10 +28,17 @@ $dtCreArt = sql_select("ARTICLE", "dtCreArt", "numArt = $numArt")[0]['dtCreArt']
 list($date, $heure) = explode(" ", $dtCreArt);
 $urlPhotArt = sql_select("ARTICLE", "urlPhotArt", "numArt = $numArt")[0]['urlPhotArt'];
 $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
+$keywords = sql_select("MOTCLE", "*");
+$keywordselected = sql_select("MOTCLEARTICLE", "numMotCle", "numArt = $numArt");
+$array_keywords = array();
+foreach($keywordselected as $keyword){
+    $array_keywords[] = $keyword['numMotCle'];
+}
 
 ?>
 
 <!--Bootstrap form to create a new articles-->
+<p><?php echo $keywordselected[0][0]?></p>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -87,6 +95,19 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
                     <?php endforeach; ?>
                     </select>
                 </div>
+                <label for="article_choice">Selectionnez vos mot-clés</label>
+                <?php foreach ($keywords as $keyword => $value) : ?>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="keywords[]" value="<?php echo $value['numMotCle']; ?>" id="flexCheckDefault" <?php if (in_array($value['numMotCle'], $array_keywords)) {
+                        echo 'checked';
+                    } else {
+                        echo '';
+                    }?>>
+                    <label class="form-check-label" for="keywords">
+                        <?php echo $value['libMotCle']; ?>
+                    </label>
+                </div>
+                <?php endforeach; ?> 
                 <div class="form-group">
                     <label for="urlPhotArt">Insérer votre photo :</label>
                     <input id="urlPhotArt" type="file" name="urlPhotArt" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp">

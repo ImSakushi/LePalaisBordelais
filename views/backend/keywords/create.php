@@ -3,7 +3,6 @@ include '../../../header.php';
 include '../../check_access.php';
 ?>
 
-<!--Bootstrap form to create a new status-->
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -11,11 +10,10 @@ include '../../check_access.php';
             <h2>Nouveau mot-clé</h2>
         </div>
         <div class="col-md-12">
-            <!--Form to create a new status-->
             <form action="<?php echo ROOT_URL . '/api/keywords/create.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="libThem">Nom du mot-clé</label>
-                    <input id="libThem" class="form-control" type="text" name="libMotCLe">
+                    <label for="keyword">Nom du mot-clé</label>
+                    <input id="keyword" class="form-control" type="text" name="keyword">
                 </div>
                 <div class="form-group mt-2">
                     <button type="submit" class="btn btn-dark">Créer</button>

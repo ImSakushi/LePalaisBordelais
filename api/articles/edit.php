@@ -28,17 +28,25 @@ else
 }
 
 
+sql_update('ARTICLE', "libTitrArt = $libTitrArt, libChapoArt = $libChapoArt, libAccrochArt = $libAccrochArt, parag1Art = $parag1Art, libSsTitr1Art = $libSsTitr1Art, parag2Art = $parag2Art, libSsTitr2Art = $libSsTitr2Art, parag3Art = $parag3Art, libConclArt = $libConclArt, dtCreArt = $dtCreArt, numThem = $numThem", "numArt = $numArt");
 
-
-sql_update('ARTICLE', "libTitrArt = $libTitrArt", "numArt = $numArt");
-sql_update('ARTICLE', "libChapoArt = $libChapoArt", "numArt = $numArt");
-sql_update('ARTICLE', "libAccrochArt = $libAccrochArt", "numArt = $numArt");
-sql_update('ARTICLE', "parag1Art = $parag1Art", "numArt = $numArt");
-sql_update('ARTICLE', "libSsTitr1Art = $libSsTitr1Art", "numArt = $numArt");
-sql_update('ARTICLE', "parag2Art = $parag2Art", "numArt = $numArt");
-sql_update('ARTICLE', "libSsTitr2Art = $libSsTitr2Art", "numArt = $numArt");
-sql_update('ARTICLE', "parag3Art = $parag3Art", "numArt = $numArt");
-sql_update('ARTICLE', "libConclArt = $libConclArt", "numArt = $numArt");
-sql_update('ARTICLE', "dtCreArt = $dtCreArt", "numArt = $numArt");
-sql_update('ARTICLE', "numThem = $numThem", "numArt = $numArt");
+// sql_update('ARTICLE', "libTitrArt = $libTitrArt", "numArt = $numArt");
+// sql_update('ARTICLE', "libChapoArt = $libChapoArt", "numArt = $numArt");
+// sql_update('ARTICLE', "libAccrochArt = $libAccrochArt", "numArt = $numArt");
+// sql_update('ARTICLE', "parag1Art = $parag1Art", "numArt = $numArt");
+// sql_update('ARTICLE', "libSsTitr1Art = $libSsTitr1Art", "numArt = $numArt");
+// sql_update('ARTICLE', "parag2Art = $parag2Art", "numArt = $numArt");
+// sql_update('ARTICLE', "libSsTitr2Art = $libSsTitr2Art", "numArt = $numArt");
+// sql_update('ARTICLE', "parag3Art = $parag3Art", "numArt = $numArt");
+// sql_update('ARTICLE', "libConclArt = $libConclArt", "numArt = $numArt");
+// sql_update('ARTICLE', "dtCreArt = $dtCreArt", "numArt = $numArt");
+// sql_update('ARTICLE', "numThem = $numThem", "numArt = $numArt");
+if(isset($_POST['keywords']))
+{
+   foreach($_POST['keywords'] as $keyword)
+   {
+    sql_delete('MOTCLEARTICLE', "numArt = $numArt");
+    sql_insert("MOTCLEARTICLE", "numMotCle, numArt", "$keyword, $numArt");
+   }
+}
 header('Location: ../../views/backend/articles/list.php');
