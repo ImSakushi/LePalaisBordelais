@@ -4,8 +4,8 @@
 include '../../../header.php';
 include '../../check_access.php';
 
-$numStat = $_GET['numStat'];
-$libStat = sql_select("STATUT", "libStat", "numStat = $numStat")[0]['libStat'];
+$numThem = $_GET['numThem'];
+$libThem = sql_select("THEMATIQUE", "libThem", "numThem = $numThem")[0]['libThem'];
 ?>
 
 <!--Bootstrap form to create a new status-->
@@ -16,11 +16,11 @@ $libStat = sql_select("STATUT", "libStat", "numStat = $numStat")[0]['libStat'];
         </div>
         <div class="col-md-12">
             <!--Form to create a new status-->
-            <form action="<?php echo ROOT_URL . '/api/status/delete.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/thematiques/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="libStat">Nom du statut :</label>
-                    <input id="numStat" class="form-control" type="text" style="display: none;" name="numStat" value="<?php echo($numStat) ?>" readonly="readonly" >
-                    <input id="libStat" class="form-control" type="text" name="libStat" value="<?php echo($libStat) ?>" readonly="readonly">
+                    <label for="libThem">Nom du statut :</label>
+                    <input id="numThem" class="form-control" type="text" style="display: none;" name="numThem" value="<?php echo($numThem) ?>" readonly="readonly" >
+                    <input id="libThem" class="form-control" type="text" name="libThem" value="<?php echo($libThem) ?>" readonly="readonly">
                 </div>
                 <div class="form-group mt-2">
                     <button type="submit" class="btn btn-danger">Supprimer</button>

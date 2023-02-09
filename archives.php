@@ -71,7 +71,6 @@ $touslesmois = array(
                             </svg>
                         </div>
                     </div>
-
                     <p><br></p>
                     <div class="d-grid gap-2 col-12 mx-auto">
                     <button onclick="location.href='article.php?numArt=<?php echo $articles[$article]['numArt']; ?>';" class="btn btn-outline-dark" type="button">Lire l'article</button>

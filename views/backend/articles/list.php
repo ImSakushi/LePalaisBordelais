@@ -40,7 +40,7 @@ $articles = sql_select("ARTICLE", "*");
                     <?php } ?>
                 </tbody>
             </table>
-            <a href="create.php" class="btn btn-dark">Create</a>
+            <a href="create.php" class="btn btn-dark">Créer</a>
         </div>
     </div>
 

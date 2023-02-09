@@ -23,7 +23,11 @@
                         <div class="row align-item center">
 
                             <div class="col">
-                                <a href="contact.php">Contact</a>
+                                <?php if ($_SESSION["id_user"] == 1) {
+                                    echo '<a href="/views/backend/dashboard.php">Panel Admin</a>';
+                                } else {
+                                    echo '<a href="contact.php">Contact</a>';
+                                }?>
                             </div>
 
                             <div class="col">

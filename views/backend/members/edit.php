@@ -19,6 +19,7 @@ $eMailMemb = sql_select("MEMBRE", "eMailMemb", "numMemb = $numMemb")[0]['eMailMe
 $dtCreaMemb = sql_select("MEMBRE", "dtCreaMemb", "numMemb = $numMemb")[0]['dtCreaMemb'];
 list($date, $heure) = explode(" ", $dtCreaMemb);
 $numStat = sql_select("MEMBRE", "numStat", "numMemb = $numMemb")[0]['numStat'];
+$statuts = sql_select("STATUT", "*");
 
 ?>
 
@@ -47,11 +48,21 @@ $numStat = sql_select("MEMBRE", "numStat", "numMemb = $numMemb")[0]['numStat'];
                 </div>
                 <div class="form-group">
                     <label for="passMemb">Mot de passe de l'utilisateur : </label>
-                    <input id="passMemb"  class="form-control" maxlength="70" value="<?php echo($passMemb) ?>" required placeholder="Ajouter du texte (70 caractères max)" type="text" name="passMemb">
+                    <input id="passMemb"  class="form-control" maxlength="70" required placeholder="Ajouter du texte (70 caractères max)" type="password" name="passMemb">
                 </div>
                 <div class="form-group">
-                    <label for="eMailMemb">Mot de passe de l'utilisateur : </label>
+                    <label for="eMailMemb">E-mail de l'utilisateur : </label>
                     <input id="eMailMemb"  class="form-control" maxlength="70" value="<?php echo($eMailMemb) ?>" required placeholder="Ajouter du texte (70 caractères max)" type="text" name="eMailMemb">
+                </div>
+                <div class="form-group">
+                    <label for="article_choice">Choisir le rôle du membre</label>
+                    <select id="numStat" class="form-control" type="text" name="numStat">
+                    <?php foreach ($statuts as $statut => $value) : ?>
+                        <option value="<?php echo $value['numStat']; ?>"<?php if ($value['numStat'] == $numStat) {
+                            echo 'selected';
+                        }?>><?php echo $value['libStat']; ?></option>
+                    <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="dtCreaMemb">Date de création du compte :</label>

@@ -30,7 +30,7 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Delete?</h1>
+            <h1>Supprimer ?</h1>
         </div>
         <div class="col-md-12">
             <!--Form to create a new articles-->

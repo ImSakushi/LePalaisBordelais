@@ -39,13 +39,17 @@ session_start();
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="align-items: center;">
             <li class="nav-item">
-                 <a class="nav-link active text-white headertitre" class="archi" aria-current="page" href="/index.php">LE PALAIS BORDELAIS</a>
+            <?php if ($_SESSION["id_user"] == 1) {
+                                    echo '<a class="nav-link active text-white headertitre" class="archi" aria-current="page" href="/index.php">LE PALAIS<br>BORDELAIS</a>';
+                                } else {
+                                    echo '<a class="nav-link active text-white headertitre" class="archi" aria-current="page" href="/index.php">LE PALAIS BORDELAIS</a>';
+                                }?>
               </li>
               <li class="nav-item">
                  <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="/archives.php">Archives</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="/views/backend/dashboard.php" >Recommandation</a>  
+                <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="#" >Recommandation</a>  
               </li>
               <li class="nav-item dropdown">
               <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="#">
@@ -54,6 +58,13 @@ session_start();
               </li>
               <li class="nav-item">
                 <a class="nav-link active text-white headertext" class="archi" aria-current="page" href="#">Histoire</a>
+              </li>
+              <li class="nav-item">
+              <?php if ($_SESSION["id_user"] == 1) {
+                                    echo '<a class="nav-link active text-white headertext" class="archi" aria-current="page" href="/views/backend/dashboard.php">Admin</a>';
+                                } else {
+                                    echo '<a class="nav-link active text-white headertext" class="archi" aria-current="page" href="#"></a>';
+                                }?>
               </li>
             </ul>
             <form class="d-flex text-white" role="search">

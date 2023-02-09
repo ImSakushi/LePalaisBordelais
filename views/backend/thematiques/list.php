@@ -9,7 +9,7 @@ include '../../check_access.php';
 } */
 
 //Load all statuses
-$membres = sql_select("MEMBRE", "*");
+$thematiques = sql_select("THEMATIQUE", "*");
 ?>
 
 <!-- Bootstrap default layout to display all status in foreach -->
@@ -17,32 +17,30 @@ $membres = sql_select("MEMBRE", "*");
     <div class="row">
         <div class="col-md-12">
             <h1>Dashboard admin</h1>
-            <h2>Membres</h1>
-            <p>Gérez vos membres</p>
+            <h2>Thématiques</h1>
+            <p>Gérez vos thématiques</p>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Pseudo</th>
-                        <th>E-mail</th>
+                        <th>Nom de la thématique</th>
                         <th>ID</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($membres as $membre) { ?>
+                    <?php foreach ($thematiques as $thematique) { ?>
                         <tr>
-                            <td><?php echo $membre['pseudoMemb']; ?></td>
-                            <td><?php echo $membre['eMailMemb']; ?></td>
-                            <td><?php echo $membre['numMemb']; ?></td>
+                            <td><?php echo $thematique['libThem']; ?></td>
+                            <td><?php echo $thematique['numThem']; ?></td>
                             <td>
-                                <a href="edit.php?numMemb=<?php echo $membre['numMemb']; ?>" class="btn btn-outline-dark">Modifier</a>
-                                <a href="delete.php?numMemb=<?php echo $membre['numMemb']; ?>" class="btn btn-outline-dark">Supprimer</a>
+                                <a href="edit.php?numThem=<?php echo $thematique['numThem']; ?>" class="btn btn-outline-dark">Modifier</a>
+                                <a href="delete.php?numThem=<?php echo $thematique['numThem']; ?>" class="btn btn-outline-dark">Supprimer</a>
                             </td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            <a href="../register.php" class="btn btn-dark">Créer</a>
+            <a href="create.php" class="btn btn-dark">Créer</a>
             <hr class="hr" />
         </div>
     </div>

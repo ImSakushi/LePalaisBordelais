@@ -75,7 +75,7 @@ $thematiques = sql_select("THEMATIQUE", "*");
                 </div>
                 <div class="form-group">
                     <label for="urlPhotArt">Insérer votre photo :</label>
-                    <input id="urlPhotArt" type="file" name="urlPhotArt" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
+                    <input id="urlPhotArt" type="file" name="urlPhotArt" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp">
                 </div>
                 <div class="form-group mt-2">
                     <button type="submit" class="btn btn-dark">Publier l'article</button>

@@ -8,9 +8,11 @@
     exit();
 } */
 
+
+
 include '../../../header.php';
 include '../../check_access.php';
-
+$thematiques = sql_select("THEMATIQUE", "*");
 $numArt = $_GET['numArt'];
 $libTitrArt = sql_select("ARTICLE", "libTitrArt", "numArt = $numArt")[0]['libTitrArt'];
 $libChapoArt = sql_select("ARTICLE", "libChapoArt", "numArt = $numArt")[0]['libChapoArt'];
@@ -78,13 +80,16 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
                 <div class="form-group">
                     <label for="article_choice">Choisir le type d'article</label>
                     <select id="numThem" class="form-control" type="text" name="numThem">
-                        <option value="1">Événement</option>
-                        <option value="2">Acteur-clé</option>
+                    <?php foreach ($thematiques as $thematique => $value) : ?>
+                        <option value="<?php echo $value['numThem']; ?>"<?php if ($value['numThem'] == $numThem) {
+                            echo 'selected';
+                        }?>><?php echo $value['libThem']; ?></option>
+                    <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="urlPhotArt">Insérer votre photo :</label>
-                    <input id="urlPhotArt" type="file" name="urlPhotArt" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
+                    <input id="urlPhotArt" type="file" name="urlPhotArt" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp">
                 </div>
                 <div class="form-group">
                     <label for="dtCreArt">Date de création :</label>

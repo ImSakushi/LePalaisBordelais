@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
             if ($testpassword[0][0] == $password) {
                 session_start();
                 $_SESSION["username"] = $username;
+                $_SESSION["role"] = $testusername[0][3];
                 header("location: ../../index.php");
             } else {
                 $error = "Les identifiants sont invalides.";
