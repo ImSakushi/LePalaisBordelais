@@ -1,8 +1,10 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 include 'header.php';
 
 $numArt = $_GET['numArt'];
+$articles = sql_select("ARTICLE", "*", NULL, 'numArt DESC');
 $articledata = sql_select('ARTICLE', '*', "numArt = $numArt");
 
 
@@ -23,81 +25,144 @@ $theme = $articledata[0]['numThem'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titre ?></title>
 </head>
+
 <body>
     <div class="container">
+        <p><br><br></p>
+        <div class="text-center">
+            <h1 class="fw-bolder"><?php echo $titre ?></h1>
+        </div>
         <p><br></p>
-        <div class="text-center"><h1 class="fw-bolder" ><?php echo $titre ?></h1></div>
-        <p><br></p>
-        <div class="text-center"><h2><?php echo $chapo ?></h2></div>
+        <div class="text-center">
+            <h2><?php echo $chapo ?></h2>
+        </div>
         <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
         <p><br></p>
-        <div class="text-left"><h3><?php echo $accroche ?></h3></div>
-        <div class="text-left fs-5 paragraphe-text"><p><?php echo $paragraphe1 ?></p></div>
-        <div class="text-left text-uppercase fw-bolder"><p><?php echo $stitre1 ?></p></div>
-        <div class="text-left fs-5 paragraphe-text"><p><?php echo $paragraphe2 ?></p></div>
-        <div class="text-left text-uppercase fw-bolder"><p><?php echo $stitre2 ?></p></div>
-        <div class="text-left fs-5 paragraphe-text"><p><?php echo $paragraphe3 ?></p></div>
-        <div class="text-left fs-5 paragraphe-text"><p><?php echo $conclusion ?></p></div>
+        <div class="text-left">
+            <h3><?php echo $accroche ?></h3>
+        </div>
+        <div class="text-left fs-5 paragraphe-text">
+            <p><?php echo $paragraphe1 ?></p>
+        </div>
+        <div class="text-left text-uppercase fw-bolder">
+            <p><?php echo $stitre1 ?></p>
+        </div>
+        <div class="text-left fs-5 paragraphe-text">
+            <p><?php echo $paragraphe2 ?></p>
+        </div>
+        <div class="text-left text-uppercase fw-bolder">
+            <p><?php echo $stitre2 ?></p>
+        </div>
+        <div class="text-left fs-5 paragraphe-text">
+            <p><?php echo $paragraphe3 ?></p>
+        </div>
+        <div class="text-left fs-5 paragraphe-text">
+            <p><?php echo $conclusion ?></p>
+        </div>
     </div>
 
 
     <div class=container>
         <h2>D'autres articles</h2>
 
-        <div class="row pb-5">
-            <div class="col-6">
-                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
-            </div>
-            <div class="col-6">
-                <h3>Titre Article</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                    llamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <p><br></p>
-            <div class="col-3">
-                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
-            </div>
-            <div class="col-3">
-                <h4>Titre Article</h4>
-                <p>chapeau.</p>
-            </div>
-            <div class="col-3">
-                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
-            </div>
-            <div class="col-3">
-                <h4>Titre Article</h4>
-                <p>chapeau.</p>
-            </div>
-            
-            </div>
+        <div class="card mb-3" style="max-width: 720px;">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <h5 class="card-title"><?php echo $articles[0]['libTitrArt']; ?></h5>
+                    <a href="article.php?numArt=<?php echo $articles[0]['numArt']; ?>">
+                        <img src="source/images/articles/<?php echo $articles[0]['urlPhotArt']; ?>" class="img-fluid img-article" style="width: 547px; height: 249px; object-fit: cover; object-position: 50% 0;" alt="image article">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <p><br></p>
+                        <p class="card-date"><?php
+                                                list($date, $heure) = explode(" ", $articles[0]['dtCreArt']);
+                                                list($annee, $mois, $jour) = explode("-", $date);
+                                                echo $jour . " " . $touslesmois[$mois - 1] . " " . $annee;
+                                                ?></p>
+                        <a href="article.php?numArt=<?php echo $articles[0]['numArt']; ?>" class="card-text"><?php echo $articles[0]['libAccrochArt']; ?></a>
 
-            
+                        <p><br></p>
+
+                        <div class="etoile">
+                            <div class="col-md-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                                    <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p><br></p>
+                        <div class="d-grid gap-2 col-12 mx-auto">
+                            <button onclick="location.href='article.php?numArt=<?php echo $articles[0]['numArt']; ?>';" class="btn btn-outline-dark" type="button">Lire l'article</button>
+                        </div>
+
+                    </div>
+                </div>
+                <p><br></p>
+            </div>
         </div>
-        
+        <p><br></p>
+
+        <div class="col-3">
+            <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
+        </div>
+        <div class="autres">
+            <div class="col-3">
+                <h4>Titre Article</h4>
+                <p>chapeau.</p>
+            </div>
+            <div class="col-3">
+                <div class="text-center"><img class="img-article" src="/source/images/articles/<?php echo $image ?>" alt="image article"></div>
+            </div>
+            <div class="col-3">
+                <h4>Titre Article</h4>
+                <p>chapeau.</p>
+            </div>
+        </div>
     </div>
-    
+
+
+    </div>
+
+    </div>
+
 </body>
+<p><br><br></p>
+
 </html>
 
 <style>
-h2 {
-    padding-top:30px;
-    padding-bottom:30px;
-}
+    h2 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 
-.img-article1 {
-    width:400px;
-    height:250px;
-    border-radius: 15px;
-}
+    .img-article1 {
+        width: 400px;
+        height: 250px;
+        border-radius: 15px;
+    }
 </style>
 
 <?php require_once 'footer.php'; ?>
