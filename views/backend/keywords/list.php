@@ -9,7 +9,7 @@ include '../../check_access.php';
 } */
 
 //Load all statuses
-$thematiques = sql_select("THEMATIQUE", "*");
+$keywords = sql_select("MOTCLE", "*");
 ?>
 
 <!-- Bootstrap default layout to display all status in foreach -->
@@ -17,25 +17,25 @@ $thematiques = sql_select("THEMATIQUE", "*");
     <div class="row">
         <div class="col-md-12">
             <h1>Dashboard admin</h1>
-            <h2>Thématiques</h1>
-            <p>Gérez vos thématiques</p>
+            <h2>Mot-clés</h1>
+            <p>Gérez vos mot-clés</p>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nom de la thématique</th>
+                        <th>Nom du mot-clé</th>
                         <th>ID</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($thematiques as $thematique) { ?>
+                    <?php foreach ($keywords as $keyword) { ?>
                         <tr>
-                            <td><?php echo $thematique['libThem']; ?></td>
-                            <td><?php echo $thematique['numThem']; ?></td>
+                            <td><?php echo $keyword['libMotCle']; ?></td>
+                            <td><?php echo $keyword['numMotCle']; ?></td>
                             <td>
-                                <a href="edit.php?numThem=<?php echo $thematique['numThem']; ?>" class="btn btn-outline-dark">Modifier</a>
-                                <a href="edit.php?numThem=<?php echo $thematique['numThem']; ?>" class="btn btn-outline-dark">Modifier</a>
-                                <a href="delete.php?numThem=<?php echo $thematique['numThem']; ?>" class="btn btn-outline-dark">Supprimer</a>
+                                <a href="edit.php?numMotCle=<?php echo $keyword['numMotCle']; ?>" class="btn btn-outline-dark">Modifier</a>
+                                <a href="edit.php?numMotCle=<?php echo $keyword['numMotCle']; ?>" class="btn btn-outline-dark">Modifier</a>
+                                <a href="delete.php?numMotCle=<?php echo $keyword['numMotCle']; ?>" class="btn btn-outline-dark">Supprimer</a>
                             </td>
                         </tr>
                     <?php } ?>
