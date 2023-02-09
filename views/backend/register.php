@@ -72,12 +72,9 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
 </div>
-
 </div>
 
-<?php
-include '../../footer.php';
-?>
+
 
 <style>
     .login-page {
@@ -156,3 +153,6 @@ include '../../footer.php';
     }
 </style>
 
+<?php
+include '../../footer.php';
+?>

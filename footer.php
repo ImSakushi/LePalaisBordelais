@@ -6,7 +6,7 @@
 
 <body>
     <div class = footer >
-        <hr>
+        <hr class="bande-blanche">
         <div class="row">
             <div class="align-item center">
                 <h3 class="element element3">Le Palais Bordelais</h3>
@@ -23,11 +23,11 @@
                         <div class="row align-item center">
 
                             <div class="col">
-                                <a href="contact.php">Contact</a>
+                                <a href="Contact.html">Contact</a>
                             </div>
 
                             <div class="col">
-                                <a href="views/backend/login.php">Connexion</a>
+                                <a href="Connexion.html">Connexion</a>
                             </div>
 
                         </div>
@@ -39,7 +39,7 @@
                         <div class="margefooter">
                             <div class="row align-item center">
                                 <div class="col">
-                                    <a href="index.php">Blog</a>
+                                    <a href="blog.html">Blog</a>
                                 </div>
                                 <div class="col">
                                     <a href="mentionslegales.php">Mentions Légales</a>
@@ -58,13 +58,19 @@
                 echo "$user, vous êtes connecté";
                 }?></p>
         </div>
-        <hr>
+        <hr class="bande-blanche">
     </div>
 
 
 </body>
 
 <style>
+
+.bande-blanche {
+    margin: 0rem;
+    padding : 1rem 0;
+}
+
 .textefooter {
     color: black;
     text-decoration: none;
