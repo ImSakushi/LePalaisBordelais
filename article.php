@@ -72,8 +72,48 @@ $touslesmois = array(
         </div>
     </div>
 
+<div class="container py-5">
+    <div class="row">
+        <div class="card">
+            <h2>Donnez votre avis</h2>
+        </div>
 
-    <div class=container>
+
+        <div class="container text-start">
+    <div class="row">
+    <div class="form-group">
+                    <textarea id="libCom" class="form-control" rows="2"  maxlength="250" cols="10" required placeholder="Laissez un commentaire (250 caractères max)" type="text" name="libCom"></textarea>
+                </div>
+    </div>
+</div>
+
+    </div>
+    <div class="row pt-3">
+        <div class="col pt-3">            
+            <div class="d-flex flex-start">
+            <img class="rounded-circle me-3" src="source/images/po.jpg" alt="profil" width="65" height="65">
+
+            <div class="container">
+            <p class="nomutilisateur" >@C'est_lanniv_de_joséphine</p> 
+            <p class="datecommentaire">09-02-2023</p>
+            <p class="mb-0">Joséphine Joséphine Joséphine</p>
+        </div>
+            </div>
+            <div class="d-flex flex-start mt-5">
+            <img class="rounded-circle me-3" src="source/images/po.jpg" alt="profil" width="65" height="65">
+
+            <div class="container">
+            <p class="nomutilisateur" >@Joyeux_anniversaire_joséphine</p> 
+            <p class="datecommentaire">09-02-2023</p>
+            <p class="mb-0">Joséphine Joséphine Joséphine</p>
+        </div>
+            </div>
+    </div>
+</div>
+
+
+
+    <div class="container mt-5">
         <h2>D'autres articles</h2>
 
         <div class="card mb-3">
@@ -138,6 +178,18 @@ $touslesmois = array(
 
 <style>
 
+
+    .nomutilisateur {
+        font-weight: bold;
+        font-size: large;
+        margin-bottom: 1px;
+}
+
+    .datecommentaire {
+        margin-left: 15px;
+        font-size: smaller;
+
+    }
     h2 {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -148,6 +200,7 @@ $touslesmois = array(
         height: 250px;
         border-radius: 15px;
     }
+
 </style>
 
 <?php require_once 'footer.php'; ?>
