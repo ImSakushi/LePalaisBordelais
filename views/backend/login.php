@@ -10,8 +10,7 @@ if (isset($_POST['submit'])) {
         $testusername = sql_select("MEMBRE", "pseudoMemb", "pseudoMemb = '$username'");
         if ($testusername[0][0] == $username) {
             $testpassword = sql_select("MEMBRE", "passMemb", "passMemb = '$password'");
-            echo $testpassword[0][0];
-            if (password_verify($password, $testpassword[0][0])) {
+            if ($testpassword[0][0] == $password) {
                header("location: ../../index.php");
                session_start();
                $_SESSION["username"] = $username;
@@ -30,7 +29,7 @@ if (isset($_POST['submit'])) {
 <div class="login-page">
     <div class="login-container">
         <h1>Connexion</h1>
-        <p><?php echo sql_select("MEMBRE", "passMemb", "passMemb = '$password'");?></p>
+
         <div class="row g-0">
             <div class="col-md-12">
                 <p>Vous n'avez pas de compte ?<a href="register.php"> S'inscrire</a></p> 
@@ -48,8 +47,9 @@ if (isset($_POST['submit'])) {
 </div>
 </div>
 <?php
-include 'footer.php';
+include '../../footer.php';
 ?>
+
 <style>
 .login-page {
     background-color: #f2f2f2;
