@@ -12,7 +12,24 @@ $touslesmois = array(
     <p><br></p>
     <div class="text-center"><h1 class="fw-bolder" >Tous les articles</h1></div>
     <p><br></p>
+
+
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Trier par
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Restaurants</a></li>
+      <li><a class="dropdown-item" href="#">Plats</a></li>
+      <li><a class="dropdown-item" href="#">Thématiques</a></li>
+    </ul>
+  </div>
+
+  <p><br></p>
+
     <?php foreach ($articles as $article => $value) : ?>
+
 
        
     <div class="card mb-3" style="max-width: 720px;">
