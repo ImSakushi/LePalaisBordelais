@@ -38,7 +38,6 @@ foreach($keywordselected as $keyword){
 ?>
 
 <!--Bootstrap form to create a new articles-->
-<p><?php echo $keywordselected[0][0]?></p>
 <div class="container">
     <div class="row">
         <div class="col-md-12">

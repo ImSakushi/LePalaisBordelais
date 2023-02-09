@@ -41,11 +41,11 @@ sql_update('ARTICLE', "libTitrArt = $libTitrArt, libChapoArt = $libChapoArt, lib
 // sql_update('ARTICLE', "libConclArt = $libConclArt", "numArt = $numArt");
 // sql_update('ARTICLE', "dtCreArt = $dtCreArt", "numArt = $numArt");
 // sql_update('ARTICLE', "numThem = $numThem", "numArt = $numArt");
+sql_delete('MOTCLEARTICLE', "numArt = $numArt");
 if(isset($_POST['keywords']))
 {
    foreach($_POST['keywords'] as $keyword)
    {
-    sql_delete('MOTCLEARTICLE', "numArt = $numArt");
     sql_insert("MOTCLEARTICLE", "numMotCle, numArt", "$keyword, $numArt");
    }
 }

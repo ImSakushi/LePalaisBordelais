@@ -67,8 +67,8 @@ session_start();
                                 }?>
               </li>
             </ul>
-            <form class="d-flex text-white" role="search">
-              <input class="form-control me-2 searchbar" type="search" placeholder="Recherche..." aria-label="search">
+            <form class="d-flex text-white" role="search" action="search.php" method="post">
+              <input class="form-control me-2 searchbar" name="recherche" type="search" placeholder="Recherche..." aria-label="search">
               <?php
               if (isset($_SESSION['username']) && $_SESSION['username'] !== "") {
               $user = $_SESSION['username'];
