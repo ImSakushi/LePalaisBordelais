@@ -153,6 +153,8 @@ $theme = $articledata[0]['numThem'];
 </html>
 
 <style>
+    autre 
+
     h2 {
         padding-top: 30px;
         padding-bottom: 30px;

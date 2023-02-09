@@ -18,7 +18,7 @@ $libStat = sql_select("STATUT", "libStat", "numStat = $numStat")[0]['libStat'];
             <!--Form to create a new status-->
             <form action="<?php echo ROOT_URL . '/api/status/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="libStat">libStat</label>
+                    <label for="libStat">Nom du statut :</label>
                     <input id="numStat" class="form-control" type="text" style="display: none;" name="numStat" value="<?php echo($numStat) ?>" readonly="readonly" >
                     <input id="libStat" class="form-control" type="text" name="libStat" value="<?php echo($libStat) ?>" readonly="readonly">
                 </div>

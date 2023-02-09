@@ -1,6 +1,7 @@
 <?php
 include '../../../header.php';
 include '../../check_access.php';
+$thematiques = sql_select("THEMATIQUE", "*");
 
 ?>
 <!DOCTYPE html>
@@ -67,8 +68,9 @@ include '../../check_access.php';
                     <label for="article_choice">Choisir le type d'article</label>
                     <select id="numThem" class="form-control" type="text" name="numThem">
                         <option value="" selected disabled>-- Sélectionner la catégorie* </option>
-                        <option value="1">Événement</option>
-                        <option value="2">Acteur-clé</option>
+                        <?php foreach ($thematiques as $thematique => $value) : ?>
+                        <option value="<?php echo $value['numThem']; ?>"><?php echo $value['libThem']; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group">
