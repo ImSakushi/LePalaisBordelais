@@ -23,11 +23,11 @@
                         <div class="row align-item center">
 
                             <div class="col">
-                                <a href="Contact.html">Contact</a>
+                                <a href="contact.php">Contact</a>
                             </div>
 
                             <div class="col">
-                                <a href="Connexion.html">Connexion</a>
+                                <a href="views/backend/login.php">Connexion</a>
                             </div>
 
                         </div>
@@ -39,7 +39,7 @@
                         <div class="margefooter">
                             <div class="row align-item center">
                                 <div class="col">
-                                    <a href="blog.html">Blog</a>
+                                    <a href="index.php">Blog</a>
                                 </div>
                                 <div class="col">
                                     <a href="mentionslegales.php">Mentions Légales</a>
