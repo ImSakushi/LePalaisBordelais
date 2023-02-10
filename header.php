@@ -11,6 +11,7 @@
   <!-- Load CSS -->
   <link rel="stylesheet" href="/source/css/style.css">
   <link rel="stylesheet" href="/source/css/reset.css">
+  <link rel="icon" href="/source/images/logo.svg">
   <!-- Load JS scripts -->
   <script src="/source/js/script.js" defer></script>
 </head>

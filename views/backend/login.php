@@ -11,11 +11,14 @@ if (isset($_POST['submit'])) {
         if ($testusername[0][0] == $username) {
             $testpassword = sql_select("MEMBRE", "passMemb", "pseudoMemb = '$username'");
             if (password_verify($password, $testpassword[0][0])) {
-               header("location: ../../index.php");
                session_start();
                $_SESSION["username"] = $username;
                $id_user = sql_select("MEMBRE", "numStat", "pseudoMemb = '$username'")[0]['numStat'];
+               $id_memb = sql_select("MEMBRE", "numMemb", "pseudoMemb = '$username'")[0]['numMemb'];
                $_SESSION["id_user"] = $id_user;
+               $_SESSION["id_memb"] = $id_memb;
+               header("location: ../../index.php");
+
             } else {
                 $error = "Les identifiants sont invalides.";
             }

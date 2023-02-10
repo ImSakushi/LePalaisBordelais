@@ -4,6 +4,7 @@ $touslesmois = array(
     "janvier", "février", "mars", "avril", "mai", "juin",
     "juillet", "août", "septembre", "octobre", "novembre", "décembre"
 );
+$keywords = sql_select("MOTCLE", "libMotCle");
 
 
 ?>
@@ -20,9 +21,9 @@ $touslesmois = array(
       Trier par
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Restaurants</a></li>
-      <li><a class="dropdown-item" href="#">Plats</a></li>
-      <li><a class="dropdown-item" href="#">Thématiques</a></li>
+        <?php foreach ($keywords as $keyword => $value) : ?>
+      <li><a class="dropdown-item" href="#"><?php echo $keywords[$keyword][0]?></a></li>
+      <?php endforeach; ?>
     </ul>
   </div>
 

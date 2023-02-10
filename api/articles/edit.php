@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require_once __DIR__ . '/../../config.php';
 
 
 $numArt = $_POST['numArt'];
@@ -23,7 +23,7 @@ if (!file_exists($_FILES['urlPhotArt']['tmp_name']) || !is_uploaded_file($_FILES
 }
 else
 {
-    move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/source/images/articles/' . $_FILES['urlPhotArt']['name']);
+    move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], __DIR__ . '/../../source/images/articles/' . $_FILES['urlPhotArt']['name']);
     sql_update('ARTICLE', "urlPhotArt = '$urlPhotArt'", "numArt = $numArt");
 }
 

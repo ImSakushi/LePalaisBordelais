@@ -73,13 +73,6 @@ $numThem = sql_select("ARTICLE", "numThem", "numArt = $numArt")[0]['numThem'];
                     <textarea id="libConclArt" class="form-control" rows="6"  maxlength="5000" cols="10" required placeholder="Ajouter du texte (5 000 caractères max)" type="text" name="libConclArt" readonly="readonly"><?php echo($libConclArt) ?></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="article_choice">Type d'article</label>
-                    <select id="numThem" class="form-control" type="text" name="numThem">
-                        <option value="1">Événement</option>
-                        <option value="2">Acteur-clé</option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label for="dtCreArt">Date de création :</label>
                     <input type="date" name="dtCreArt" id="dtCreArt" value="<?php echo $date?>" placeholder="Date de création"  readonly="readonly">
                 </div>

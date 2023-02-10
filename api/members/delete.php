@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require_once __DIR__ . '/../../config.php';
 
 $numMemb = $_POST['numMemb'];
 sql_delete('MEMBRE', "numMemb = $numMemb");

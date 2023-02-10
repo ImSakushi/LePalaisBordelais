@@ -1,10 +1,10 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require_once __DIR__ . '/../../config.php';
 
-// echo $_SERVER['DOCUMENT_ROOT'] . '/source/images/' . $_POST['urlPhotArt']['name'];
+// echo __DIR__ . '/source/images/' . $_POST['urlPhotArt']['name'];
 if(isset($_FILES['urlPhotArt'])){
-    move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/source/images/articles/' . $_FILES['urlPhotArt']['name']);
+    move_uploaded_file($_FILES['urlPhotArt']['tmp_name'], __DIR__ . '/../../source/images/articles/' . $_FILES['urlPhotArt']['name']);
   }
 
 $libTitrArt = '"' . sql_escape($_POST['libTitrArt']) . '"';
