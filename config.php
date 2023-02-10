@@ -1,7 +1,7 @@
 <?php
 
 //define ROOT_PATH
-define('ROOT', $_SERVER['DOCUMENT_ROOT']);
+define('ROOT', __DIR__);
 define('ROOT_URL', 'http://' . $_SERVER['HTTP_HOST']);
 
 //Load env

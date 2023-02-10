@@ -32,8 +32,8 @@ $statuses = sql_select("STATUT", "*");
                             <td><?php echo $status['numStat']; ?></td>
                             <td><?php echo $status['libStat']; ?></td>
                             <td>
-                                <a href="edit.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-outline-dark">Edit</a>
-                                <a href="delete.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-outline-dark">Delete</a>
+                                <a href="edit.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-outline-dark">Modifier</a>
+                                <a href="delete.php?numStat=<?php echo $status['numStat']; ?>" class="btn btn-outline-dark">Supprimer</a>
                             </td>
                         </tr>
                     <?php } ?>

@@ -4,7 +4,6 @@ include '../../header.php';
 //Level 1 mean administator in DB
 
 include 'check_access.php';
-
 ?>
 
 <!--Bootstrap admin dashboard template-->
@@ -30,9 +29,24 @@ include 'check_access.php';
                         <tr>
                             <td>Statuts</td>
                             <td>
-                                <a href="/views/backend/status/list.php" class="btn btn-outline-dark">Liste</a>
-                                <a href="/views/backend/status/create.php" class="btn btn-outline-dark">Créer</a>
-                                <a href="/views/backend/status/list.php" class="btn btn-outline-dark">Modifier</a>
+                                <a href="/views/backend/status/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Liste</a>
+                                <a href="/views/backend/status/create.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>" >Créer</a>
+                                <a href="/views/backend/status/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Modifier</a>
                             </td>
                             <td>
                               
@@ -41,27 +55,72 @@ include 'check_access.php';
                         <tr>
                             <td>Membres</td>
                             <td>
-                                <a href="/views/backend/members/list.php" class="btn btn-outline-dark">Liste</a>
-                                <a href="/views/backend/members/create.php" class="btn btn-outline-dark">Créer</a>
-                                <a href="/views/backend/members/list.php" class="btn btn-outline-dark">Modifier</a>
+                                <a href="/views/backend/members/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Liste</a>
+                                <a href="/views/backend/members/create.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Créer</a>
+                                <a href="/views/backend/members/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Modifier</a>
                             </td>
                            
                         </tr>
                         <tr>
                             <td>Articles</td>
                             <td>
-                                <a href="/views/backend/articles/list.php" class="btn btn-outline-dark">Liste</a>
-                                <a href="/views/backend/articles/create.php" class="btn btn-outline-dark">Créer</a>
-                                <a href="/views/backend/articles/list.php" class="btn btn-outline-dark">Modifier</a>
+                                <a href="/views/backend/articles/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Liste</a>
+                                <a href="/views/backend/articles/create.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Créer</a>
+                                <a href="/views/backend/articles/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Modifier</a>
                             </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Thématiques</td>
                             <td>
-                                <a href="/views/backend/thematiques/list.php" class="btn btn-outline-dark">Liste</a>
-                                <a href="/views/backend/thematiques/create.php" class="btn btn-outline-dark">Créer</a>
-                                <a href="/views/backend/thematiques/list.php" class="btn btn-outline-dark">Modifier</a>
+                                <a href="/views/backend/thematiques/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Liste</a>
+                                <a href="/views/backend/thematiques/create.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Créer</a>
+                                <a href="/views/backend/thematiques/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Modifier</a>
                             </td>
                             <td></td>
                         </tr>
@@ -86,9 +145,24 @@ include 'check_access.php';
                         <tr>
                             <td>Keywords</td>
                             <td>
-                                <a href="/views/backend/keywords/list.php" class="btn btn-outline-dark">Liste</a>
-                                <a href="/views/backend/keywords/create.php" class="btn btn-outline-dark">Créer</a>
-                                <a href="/views/backend/keywords/list.php" class="btn btn-outline-dark">Modifier</a>
+                                <a href="/views/backend/keywords/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Liste</a>
+                                <a href="/views/backend/keywords/create.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Créer</a>
+                                <a href="/views/backend/keywords/list.php" class="btn btn-outline-dark 
+                                <?php if ($_SESSION['id_user'] == 1) {
+                                    echo "";
+                                } else {
+                                    echo "disabled";
+                                }?>">Modifier</a>
                             </td>
                             <td></td>
                         </tr>

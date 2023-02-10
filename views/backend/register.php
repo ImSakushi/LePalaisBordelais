@@ -19,7 +19,6 @@ if (isset($_POST['submit'])) {
                 if (empty($email)) {
                 $error = "Les identifiants sont mails.";
                 } else {
-                    echo "OK";
                     $testusername = sql_select("MEMBRE", "pseudoMemb", "pseudoMemb = '$username'");
                     if ($testusername[0][0] == $username) {
                         $error = "Le pseudo est déjà utilisé.";
@@ -30,9 +29,13 @@ if (isset($_POST['submit'])) {
                         } else {
                             $result = sql_insert("MEMBRE", "pseudoMemb, nomMemb, prenomMemb, emailMemb, passMemb, numStat", "'$username', '$nom', '$prenom', '$email', '$passwordHash', 3");
                             if ($result) {
-                                header("location: ../../index.php");
                                 session_start();
+                                header("location: ../../index.php");
                                 $_SESSION["username"] = $username;
+                                $id_user = sql_select("MEMBRE", "numStat", "pseudoMemb = '$username'")[0]['numStat'];
+                                $id_memb = sql_select("MEMBRE", "numMemb", "pseudoMemb = '$username'")[0]['numMemb'];
+                                $_SESSION["id_user"] = $id_user;
+                                $_SESSION["id_memb"] = $id_memb;
                             } else {
                                 $error = "Les identifiants sont invalides.";
                         }

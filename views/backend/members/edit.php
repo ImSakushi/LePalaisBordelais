@@ -48,7 +48,7 @@ $statuts = sql_select("STATUT", "*");
                 </div>
                 <div class="form-group">
                     <label for="passMemb">Mot de passe de l'utilisateur : </label>
-                    <input id="passMemb"  class="form-control" maxlength="70" required placeholder="Ajouter du texte (70 caractères max)" type="password" name="passMemb">
+                    <input id="passMemb"  class="form-control" maxlength="70" placeholder="Ajouter du texte (70 caractères max)" type="password" name="passMemb">
                 </div>
                 <div class="form-group">
                     <label for="eMailMemb">E-mail de l'utilisateur : </label>
