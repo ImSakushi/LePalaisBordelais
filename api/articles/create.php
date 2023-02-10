@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../config.php';
+session_start();
 
 // echo __DIR__ . '/source/images/' . $_POST['urlPhotArt']['name'];
 if(isset($_FILES['urlPhotArt'])){

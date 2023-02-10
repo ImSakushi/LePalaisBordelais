@@ -7,11 +7,9 @@
 <body>
     <div class = footer >
         <hr class="bande-blanche">
-        <div class="row">
             <div class="align-item center">
                 <h3 class="element element3">Le Palais Bordelais</h3>
             </div>
-        </div>
         
         <div class="container text-center">
         

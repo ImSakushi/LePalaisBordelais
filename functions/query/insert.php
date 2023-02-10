@@ -11,7 +11,7 @@ function sql_insert($from, $keys, $values) {
 
     //prepare query for PDO
     $query = "INSERT INTO $from ($keys) VALUES ($values)";
-    echo $query . "<br>"; //debug
+    //echo $query . "<br>"; //debug
 
     //execute query
     $DB->query($query);

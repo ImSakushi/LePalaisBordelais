@@ -30,6 +30,9 @@ foreach($keywordselected as $keyword){
 }
 
 $likes = sql_select('LIKEART', '*', "numArt = $numArt");
+if(isset($_SESSION['username'])) {
+    $islike = sql_select('LIKEART', 'likeA', "numMemb = $id_memb AND numArt = $numArt");
+}
 
 
 $touslesmois = array(
@@ -98,7 +101,12 @@ $touslesmois = array(
         <input type="hidden" name="numMemb" value="<?php echo $id_memb ?>">
         <input type="hidden" name="numArt" value="<?php echo $numArt ?>">
         <div class="likeflex" style="display:flex; align-items:center;">
-            <button type="submit" class="btn btn-danger">Like</button>
+            <button class="like" type="submit"><img src=<?php
+            if ($islike[0][0] == 0) {
+                echo '"/source/images/like.svg"';
+            } else {
+                echo '"/source/images/unlike.svg"';
+            }?>></button>
             <p class="fs-5 margino"><?php
             $nombrelike = sql_select('LIKEART', "Count(likeA)", "numArt = $numArt")[0][0];
             echo "    " . $nombrelike?></p>
@@ -266,6 +274,7 @@ $touslesmois = array(
 
 .margino {
     margin-bottom : 0rem;
+    color: grey;
 }
 </style>
 
