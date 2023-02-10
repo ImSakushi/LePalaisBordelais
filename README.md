@@ -14,7 +14,10 @@
 - **Mentions légales** - Les mentions légales sont rédigés selon les lois RGPD.
 - **Cookies** - Fenêtre d'acceptation des cookies qui disparaitra pendant 1 an après l'avoir confirmé.
 - **Autres** - Et puis il y a probablement encore d'autres trucs que j'ai zappé
-
+- 
+## Fonctionnalités qui ne marchent pas (au moment où j'écris ces lignes)
+- **Le "trier par"**
+- **Le modérateur**
 
 ## Panel Admin
 
