@@ -10,7 +10,7 @@
 - **Admin** - Peut créer et supprimer des articles, thématiques, mots-clés, status à l'aide d'un CMS intégré et connecté à la base de donnée... Changer les identifiants d'un membre. Onglet accessible uniquement par le rôle admin, même si met l'url DU CMS
 - **Accessibilité** - Le site est sobre, contrasté et responsive
 - **Barre de recherche** - Il est possible de rechercher n'importe quel article grâce à la superbe barre de recherche
-- **Date** - Les dates sont écrites en français. Exemple : 2022-01-05 16:11:34 -> 01 Janvier 2022 (l'heure est supprimée)
+- **Date** - Les dates sont écrites en français. Exemple : 2022-01-05 16:11:34 -> 05 Janvier 2022 (l'heure est supprimée)
 - **Mentions légales** - Les mentions légales sont rédigés selon les lois RGPD.
 - **Cookies** - Fenêtre d'acceptation des cookies qui disparaitra pendant 1 an après l'avoir confirmé.
 - **Autres** - Et puis il y a probablement encore d'autres trucs que j'ai zappé
