@@ -84,6 +84,11 @@ $touslesmois = array(
     <div class="form-group">
                     <textarea id="libCom" class="form-control" rows="2"  maxlength="250" cols="10" required placeholder="Laissez un commentaire (250 caractères max)" type="text" name="libCom"></textarea>
                 </div>
+                <div class="d-flex justify-content-end pt-3">
+                <div class="d-grid gap-2 col-3">
+                    <button" class="btn btn-dark" type="button">Envoyer</button>
+                    </div>
+                </div>
     </div>
 </div>
 
