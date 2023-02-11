@@ -11,13 +11,13 @@ if (isset($_POST['submit'])) {
     // $password = password_hash($password, PASSWORD_DEFAULT);
     // echo $password;
     if (empty($username) || empty($password)) {
-        $error = "Les identifiants sont user.";
+        $error = "Les identifiants sont invalides.";
     } else {
         if (empty($nom) || empty($prenom)) {
-            $error = "Les identifiants sont nom.";
+            $error = "Les identifiants sont invalides.";
             } else {
                 if (empty($email)) {
-                $error = "Les identifiants sont mails.";
+                $error = "Les identifiants sont invalides.";
                 } else {
                     $testusername = sql_select("MEMBRE", "pseudoMemb", "pseudoMemb = '$username'");
                     if ($testusername[0][0] == $username) {
