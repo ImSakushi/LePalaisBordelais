@@ -34,7 +34,7 @@ if(isset($_COOKIE['accept_cookies']) AND $_COOKIE['accept_cookies'] == 'true') {
 <div class="container container-homepage">
     <div class="row">
         <div class="col">
-            <div class="card border-0" style="width: 29rem;margin: auto;">
+            <div class="card border-0 mobilebig" style="margin: auto;">
                 <div class="card-body">
                     <?php
                     // if(isset($_SESSION['username'])) {
@@ -70,7 +70,7 @@ if(isset($_COOKIE['accept_cookies']) AND $_COOKIE['accept_cookies'] == 'true') {
         </div>
     
         <div class="col">
-            <div class="card border-0" style="width: 28rem;margin: auto;">
+            <div class="card border-0 mobile" style="margin: auto;">
                 <div class="card-body">
 
                 <div class= haut >
@@ -85,7 +85,7 @@ if(isset($_COOKIE['accept_cookies']) AND $_COOKIE['accept_cookies'] == 'true') {
                     <a href="#" class="card-link">lire la suite</a>
                 </div>
             </div>
-            <div class="card border-0" style="width: 28rem;margin: auto;">
+            <div class="card border-0 mobile" style="margin: auto;">
                 <div class="card-body">
                     <p class="card-date"><?php
                                             list($date, $heure) = explode(" ", $articles[2]['dtCreArt']);

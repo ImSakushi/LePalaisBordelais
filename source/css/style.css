@@ -283,3 +283,23 @@ p.dark-mode {
 .container-homepage {
     max-width: 1200px;
 }
+
+.mobile {
+    width:28rem;
+}
+
+@media (max-width: 768px) {
+    .mobile {
+        width: 22rem;
+    }
+}
+
+.mobilebig {
+    width:29rem;
+}
+
+@media (max-width: 768px) {
+    .mobilebig {
+        width: 22rem;
+    }
+}
