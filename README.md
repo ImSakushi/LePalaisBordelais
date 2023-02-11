@@ -1,4 +1,4 @@
-# Le Palais Bordelais
+# Le Palais Bordelais - Groupe 7 RHAPSODY
 
 ## Site crée pour le projet BlogArt au BUT MMI Bordeaux Montaigne
 
